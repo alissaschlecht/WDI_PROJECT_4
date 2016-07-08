@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html data-ng-app="dayWithAlex">
+  <head>
+    <meta charset="utf-8">
+    <title>Day with Alex</title>
+    <link rel="stylesheet" href="/css/app.css" charset="utf-8">
+    <base href="/" />
+  </head>
+  <body data-ng-controller="mainController as main">
+    <header>
+      <nav>
+        <ul>
+          <li><a data-ui-sref="home">Home</a></li>
+          <li data-ng-show="main.user"><a data-ui-sref="usersIndex">Users</a></li>
+          <li data-ng-hide="main.user"><a data-ui-sref="register">Register</a></li>
+          <li data-ng-hide="main.user"><a data-ui-sref="login">Login</a></li>
+          <li data-ng-show="main.user"><a ng-href="#" data-ng-click="main.logout()">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    {{ main.user }}
+
+    <main data-ui-view></main>
+
+    <script src="/angular/angular.js" charset="utf-8"></script>
+    <script src="/angular-ui-router/release/angular-ui-router.js" charset="utf-8"></script>
+    <script src="/angular-resource/angular-resource.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+  </body>
+</html>
