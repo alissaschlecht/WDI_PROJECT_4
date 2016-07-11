@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html data-ng-app="dragDrop" ng-controller="DragDropCtrl as dragDrop">
+<head>
+  <title>Bike Building</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+<!--   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"> -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body class="dnd-image-drag" ng-controller="PartsController as parts">
+  <!-- <button class="reset-button">Reset Bike</button> -->
+
+  <div id="partsContainer">
+      <span ng-repeat="part in parts.parts">
+        <img src="./bikeOne/{{ part.path }}" class="item" id="{{ part.name }}" style="width: {{ part.width }}px; height: {{ part.height }}px; top: {{ part.top }}px; left: {{ part.left }}px;" draggable="true">
+        {{ part.name }}
+      </span>
+  </div>
+ 
+  <div id="bikeContainer">
+      <div ng-repeat="part in parts.parts">
+        <span class="bin" id="{{ part.name }}" droppable="true" drop="handleDrop" style="width: {{ part.width }}px; height: {{ part.height }}px; top: {{ part.top }}px; left: {{ part.left }}px;">
+        {{ part.name }}
+        </span>
+      </div>
+  </div>
+    <!-- <img src="./bikeOne/{{}}" id="bikeFrame"> -->
+<!--     
+    <div class="drop" droppable="true" id="backWheelDrop" data-value="1" drop="handleDrop()"></div>
+    <div class="drop" droppable="true" id="frontWheelDrop" data-value="1" drop="handleDrop()"></div>
+    <div class="drop" droppable="true" id="seatDrop" data-value="3" drop="handleDrop()"></div>
+    <div class="drop" droppable="true" id="gearsDrop" data-value="4" drop="handleDrop()"></div>
+    <div class="drop" droppable="true" id="handlebarDrop" data-value="5" drop="handleDrop()"></div>
+ -->
+  
+</body>
+</html>
+
