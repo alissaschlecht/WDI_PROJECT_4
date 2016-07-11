@@ -19,12 +19,12 @@ var partsController = require('../controllers/parts');
   // router.route('/parts/:id')
   //       .get(partsController.getPart)
 
-var pathsController = require('../controllers/paths');
+// var pathsController = require('../controllers/paths');
 
-  router.route('/paths')
-        .get(pathsController.getAllPaths)
+//   router.route('/paths')
+//         .get(pathsController.getAllPaths)
 
-  // router.route('/paths/:id')
-  //       .get(pathsController.getPath)
+//   // router.route('/paths/:id')
+//   //       .get(pathsController.getPath)
 
 module.exports = router
