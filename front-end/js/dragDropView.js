@@ -96,6 +96,9 @@ function droppable() {
           }
           if (count == 5){
             console.log("five!");
+            // spinWheels = document.getElementsByClassName('wheel');
+            // spinWheels[0].classList.add('spinWheel');
+            // spinWheels[1].classList.add('spinWheel');
             // make wheels spin
           }
           return false;
