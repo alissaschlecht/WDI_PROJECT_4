@@ -104,7 +104,7 @@ app.directive('droppable', function() {
           var item = document.getElementById(e.dataTransfer.getData('Text'));
 
           var itemId = item.id;
-          if(itemId == binId){
+          if(itemId == binId  && this.children.length == 0){
             this.appendChild(item);
             // call the passed drop function
             scope.$apply(function(scope) {
@@ -113,8 +113,7 @@ app.directive('droppable', function() {
                 fn(item.id, binId);
               }
             });
-        }
-          
+          }
           return false;
         },
         false

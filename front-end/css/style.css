@@ -1,5 +1,5 @@
 * {
-  border: red 1px solid;
+  /*border: red 1px solid;*/
 }
 
 #bikeContainer {
@@ -14,12 +14,13 @@
   display: inline;
 }
 
-/*#bikeFrameOne {
+#bikeFrameOne {
   width: 450px;
   position: absolute;
   top: 150px;
   left: 255px;
-}*/
+  z-index: -1;
+}
 
 
 /*PRE-DROP DIVS*/

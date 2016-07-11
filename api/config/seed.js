@@ -26,7 +26,7 @@ var data = [
         left: 306
       },
       {
-        name: "backWheel",
+        name: "wheel",
         path: "backBike1wheel.svg",
         width: 290,
         height: 292,
@@ -34,7 +34,7 @@ var data = [
         left: 119
       },
       {
-        name: "frontWheel",
+        name: "wheel",
         path: "frontBike1wheel.svg",
         width: 290,
         height: 292,
@@ -56,14 +56,6 @@ var data = [
         height: 108,
         top: 355,
         left: 210
-      },
-      {
-        name: "frame",
-        path: "bike1frame.svg",
-        width: 450,
-        height: 280,
-        top: 150,
-        left: 255
       }
     ]
   }
