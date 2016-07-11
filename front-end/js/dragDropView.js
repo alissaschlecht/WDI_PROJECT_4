@@ -32,6 +32,7 @@ function draggable() {
 
 
 function droppable() {
+  var count = 0;
   return {
     scope: {
       drop: '&',
@@ -94,7 +95,8 @@ function droppable() {
             });
           }
           if (count == 5){
-            
+            console.log("five!");
+            // make wheels spin
           }
           return false;
         },

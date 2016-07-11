@@ -3,6 +3,6 @@ angular.module('dragDrop')
 
 function DragDropCtrl($scope) {
   $scope.handleDrop = function(item, bin) {
-    var count = 0;
+
   }
 };
