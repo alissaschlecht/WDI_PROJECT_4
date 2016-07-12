@@ -1,0 +1,181 @@
+* {
+  border: red 1px solid;
+}
+
+li {
+  list-style-type: none;
+}
+
+.navbar {
+  position: relative;
+  float: left;
+  /*height: 100vh;*/
+}
+.navbar-inverse {
+  background-color: #aabbcc;
+  text-align: center;
+  /*position: relative;*/
+}
+
+.navbar-inverse li {
+  padding: 20px;
+}
+
+#bikeContainer {
+  position: relative;
+  width: 830px;
+  height: 440px;
+  float: left;
+  margin-left: 0 auto;
+}
+
+#partsContainer {
+ width: 300px;
+ height: 600px;
+}
+
+#bikeFrameOne {
+  width: 450px;
+  position: absolute;
+  top: 50px;
+  left: 155px;
+  z-index: -1;
+ 
+}
+
+#bikeFrameOne:hover {
+  fill: blue;
+}
+
+#bikeFrameImg {
+  width: 450px;
+  position: absolute;
+  top: 50px;
+  left: 155px;
+  z-index: -2;
+}
+
+
+/*PRE-DROP DIVS*/
+.backWheel {
+  width: 290px;
+  height: 290px;
+  top: 149px;
+  left: 13px;
+}
+
+.frontWheel {
+ width: 290px;
+ height: 290px;
+ top: 140px;
+ left: 455px;
+}
+
+.seat {
+ width: 120px !important;
+ height: 45 !important;
+ top: 20px;
+ left: 206px
+}
+
+.handlebar {
+  width: 130px;
+  height: 108px;
+  top: 1px;
+  left: 498px;
+}
+
+.gear {
+ width: 288px;
+ height: 130px;
+ top: 255px;
+ left: 136px;
+ position: absolute;
+}
+
+#chain {
+  width: 450px;
+  position: absolute;
+  top: 100px;
+  left: 155px;
+  z-index: -1;
+}
+
+/*#crank1 {
+  width: 204px;
+  top: 110px;
+  left: 446px;
+  position: absolute;
+}
+
+
+#cog1 {
+  width: 86px;
+  top: 141px;
+  left: 155px;
+  position: absolute;
+  z-index: 2;
+}
+
+#pedal1 {
+  width: 79px;
+  height:93;
+  top: 179px;
+  left: 605px;
+  position: absolute;
+}
+*/
+
+
+#colorWheel {
+  width: 200px;
+}
+
+/*STYLES FOR JS ANIMATION*/
+.bin {
+  position: absolute;
+}
+.item {
+  display: inline;
+}
+.drag {
+  opacity: 0.5;
+}
+.over {
+  background: #aabbcc;
+}
+.small {
+  width: 100px;
+}
+
+svg:hover {
+  opacity: .5;
+  /*fill: white;*/
+}
+
+img#bikeFrameOne:hover { 
+  fill: red; 
+}
+
+#sidebar-wrapper {
+  width: 200px;
+  height: 100%;
+}
+
+/*ANIMATIONS*/
+
+/*SPIN WHEELS*/
+.spinWheel {
+    -webkit-animation:spin 1.5s linear infinite;
+    -moz-animation:spin 1.5s linear infinite;
+    animation:spin 1.5s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg);
+
+.pedalSpin {
+  
+}
+
+

@@ -1,0 +1,33 @@
+<h1> I'M GEARS </h1>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+       <ul class="nav sidebar-nav">
+           <li class="sidebar-brand">   
+                  <!-- We'll also add some navigation: -->
+                  <a ui-sref="gears">Gears</a>
+                  <a ui-sref="brakes">Brakes</a>
+                  <a ui-sref="bikes">Bike</a>
+                  <a ui-sref="home">Home</a>
+           </li>
+           <li draggable="true" ng-repeat="part in parts.parts | limitTo : 3 : 6" id={{part.name}} ng-bind-html="part.svg | to_trusted"> 
+           </li>
+
+       </ul>
+  </nav>
+
+
+  <div id="bikeContainer">
+    <span ng-repeat="part in parts.parts | limitTo : 3 : 6" class="bin" id="{{ part.name }}" droppable="true" drop="handleDrop" style="width: {{ part.width }}px; height: {{ part.height }}px; top: {{ part.top }}px; left: {{ part.left }}px;">
+    </span> 
+   <!--  <span ng-repeat="part in parts.parts | limitTo : 1 : 10" id={{part.name}} ng-bind-html="part.svg | to_trusted">  -->
+
+    <img src="./bikeOne/B1chain.svg" id="chain">
+<!--     <img src="./bikeOne/B1cranks.svg" id="crank1">
+    <img src="./bikeOne/B1rearCogs.svg" id="cog1">
+    <img src="./bikeOne/B1pedal.svg" id="pedal1"> -->
+  
+
+    </span> 
+    
+  <!-- <img src="./bikeOne/B1frame.svg" id="bikeFrameImg"> -->
+  </div>

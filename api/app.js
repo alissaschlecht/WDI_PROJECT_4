@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost:27017/bikes');
 
 var routes     = require('./config/routes');
 
+app.use(express.static(__dirname + "/public"));
 app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());

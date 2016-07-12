@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html data-ng-app="dragDrop" ng-controller="DragDropCtrl as dragDrop">
+<head>
+  <title>Bike Building</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.7/angular-sanitize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
+  <script type="text/javascript" src="./js/dragDropController.js"></script>
+  <script type="text/javascript" src="./js/dragDropView.js"></script>
+  <script type="text/javascript" src="./js/partsController.js"></script>
+  <script type="text/javascript" src="./js/colorPickerController.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body class="dnd-image-drag" ng-controller="PartsController as parts">
+
+  <div ui-view></div>
+
+</body>
+</html>
+
