@@ -25,10 +25,12 @@ function createBike(request, response) {
   console.log('in POST');
   console.log('body:',request.body);
 
-  var bike = new Bike(request.body);
+  var bike = new Bike(request.body.bike);
 
   bike.save(function(error) {
     if(error) response.json({messsage: 'Could not ceate bike b/c:' + error});
+
+
 
     response.json({bike: bike});
   });

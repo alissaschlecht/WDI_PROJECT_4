@@ -129,25 +129,6 @@ function droppable() {
             spinWheels[0].classList.add('spinWheel');
             spinWheels[1].classList.add('spinWheel');
           }
-
-          // console.log(this);
-          var container = document.getElementById('bikeContainer');
-          console.log(container);
-
-
-    // STORE SESSION 
-          var storeBike = { "bikeContainer" : container };
-          if (typeof(Storage) !== "undefined") {
-
-            // Put the object into storage
-            localStorage.setItem('storeBike', JSON.stringify(storeBike));
-
-            // Retrieve the object from storage
-            var retrievedBike = localStorage.getItem('storeBike');
-
-            console.log('retrievedBike: ', JSON.parse(retrievedBike));
-          }
-
           return false;
         },
         false

@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var PartSchema = mongoose.Schema({
-  type: String,
+  name: String,
   svg: String,
   width: Number,
   height: Number,

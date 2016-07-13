@@ -1,29 +1,31 @@
 <h1> I'M BIKES </h1>
+<div ng-controller="DragDropCtrl as dragDrop">
+  <div ng-controller="PartsController as parts">
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+         <ul class="nav sidebar-nav">
+             <li class="sidebar-brand">  BIKEABLE
+                  <a ui-sref="gears">Gears</a>
+                  <a ui-sref="brakes">Brakes</a>
+                  <a ui-sref="bikes">Bike</a>
+                  <a ui-sref="home">Home</a>
+             </li>
+             <li draggable ng-repeat="part in parts.all | limitTo : 5" id={{part.name}} ng-bind-html="part.svg | to_trusted"> 
+             </li>
+         </ul>
+     </nav>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-       <ul class="nav sidebar-nav">
-           <li class="sidebar-brand">  BIKEABLE
-                <a ui-sref="gears">Gears</a>
-                <a ui-sref="brakes">Brakes</a>
-                <a ui-sref="bikes">Bike</a>
-                <a ui-sref="home">Home</a>
-           </li>
-           <li draggable ng-repeat="part in parts.parts | limitTo : 5" id={{part.name}} ng-bind-html="part.svg | to_trusted"> 
-           </li>
-       </ul>
-   </nav>
+     <!-- xxxxxxxxxxxxxxxxxxxxxxxxx BIKE DRAG AND DROP xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 
-   <!-- xxxxxxxxxxxxxxxxxxxxxxxxx BIKE DRAG AND DROP xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+     <div  class="dnd-image-drag" id="bikeContainer">
+       <span ng-repeat="part in parts.all | limitTo : 5" class="bin" id="{{ part.name }}" droppable="true" drop="handleDrop" style="width: {{ part.width }}px; height: {{ part.height }}px; top: {{ part.top }}px; left: {{ part.left }}px;">
+       </span> 
+       <span ng-repeat="part in parts.all | limitTo : 1 : 5" id={{part.name}} ng-bind-html="part.svg | to_trusted"> </span> 
 
-   <div  class="dnd-image-drag" ng-controller="PartsController as parts" id="bikeContainer">
-     <span ng-repeat="part in parts.parts | limitTo : 5" class="bin" id="{{ part.name }}" droppable="true" drop="handleDrop" style="width: {{ part.width }}px; height: {{ part.height }}px; top: {{ part.top }}px; left: {{ part.left }}px;">
-     </span> 
-     <span ng-repeat="part in parts.parts | limitTo : 1 : 5" id={{part.name}} ng-bind-html="part.svg | to_trusted"> </span> 
-
-     
-   <img src="./bikeOne/B1frame.svg" id="bikeFrameImg">
-   </div>
-
+       
+      <img src="./bikeOne/B1frame.svg" id="bikeFrameImg">
+     </div>
+  </div>
+</div>
    <!-- <input id="background-color" type="color" />  -->
 
      <!-- <button class="reset-button">Reset Bike</button> -->

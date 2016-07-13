@@ -2,13 +2,24 @@ var seeder = require('mongoose-seed');
 
 // Connect to MongoDB via Mongoose 
 seeder.connect('mongodb://localhost:27017/bikes', function() {
-  seeder.loadModels(['./models/Part.js', './models/User.js']);
-  seeder.clearModels(['Part', 'User'], function() {
+  seeder.loadModels(['./models/Part.js', './models/User.js', './models/Bike.js']);
+  seeder.clearModels(['Part', 'User', 'Bike'], function() {
     seeder.populateModels(data);
   });
 });
 
 var data = [
+
+{
+  'model': 'User',
+  'documents': [
+      {
+        name: "Bob",
+        email: "bob@bob.com",
+        password: "bob"
+      }
+    ]
+  },
   {
     'model': 'Part',
     'documents': [

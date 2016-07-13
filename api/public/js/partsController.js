@@ -24,7 +24,7 @@ angular.module('buildBikes')
      $http
        .get('http://localhost:3000/parts')
        .then(function(response){
-         self.all = response.data.parts;
+         self.all = response.data;
      });
    }
 
