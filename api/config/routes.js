@@ -7,24 +7,42 @@ var bikesController = require('../controllers/bikes');
 
   router.route('/bikes')
         .get(bikesController.getAllBikes)
+        .post(bikesController.createBike);
 
-  // router.route('/bikes/:id')
-  //       .get(bikesController.getBike)
+  router.route('/bikes/:id')
+        .get(bikesController.getBike)
+        .patch(bikesController.updateBike)
+        .delete(bikesController.removeBike)
+
 
 var partsController = require('../controllers/parts');
 
   router.route('/parts')
         .get(partsController.getAllParts)
+        .post(partsController.createPart);
 
-  // router.route('/parts/:id')
-  //       .get(partsController.getPart)
+  router.route('/parts/:id')
+        .get(partsController.getPart)
+        .patch(partsController.updatePart)
+        .delete(partsController.removePart);
 
-// var pathsController = require('../controllers/paths');
 
-//   router.route('/paths')
-//         .get(pathsController.getAllPaths)
+var authenticationController = require("../controllers/authentication");
 
-//   // router.route('/paths/:id')
-//   //       .get(pathsController.getPath)
+router.route('/users')
+      .get(authenticationController.getUsers);
+
+
+// var infoController = require('../controllers/info');
+
+//   router.route('/parts')
+//         .get(infoController.getAllInfo)
+//         .post(infoController.createInfo);
+
+//   router.route('/info/:id')
+//         .get(infoController.getInfo)
+//         .patch(infoController.updateInfo)
+//         .delete(infoController.removeInfo)
+
 
 module.exports = router
