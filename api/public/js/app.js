@@ -1,4 +1,4 @@
-angular.module('dragDrop', ['ngSanitize', 'ui.router'])
+angular.module('buildBikes', ['ngSanitize', 'ui.router', 'pw.canvas-painter', 'ngAnimate'])
        .config(function($stateProvider, $urlRouterProvider) {
   
   $stateProvider

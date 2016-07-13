@@ -1,4 +1,4 @@
-angular.module('dragDrop')
+angular.module('buildBikes')
        .controller('DragDropCtrl', DragDropCtrl);
 
 function DragDropCtrl($scope , CurrentUser) {
@@ -13,7 +13,7 @@ function DragDropCtrl($scope , CurrentUser) {
 
   this.newPart = {
 
-    user: CurrentUser
+    userId: CurrentUser
 
   }
 

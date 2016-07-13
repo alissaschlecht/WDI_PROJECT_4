@@ -1,4 +1,4 @@
-angular.module('dragDrop')
+angular.module('buildBikes')
        .directive('draggable', draggable)
        .directive('droppable', droppable)
 

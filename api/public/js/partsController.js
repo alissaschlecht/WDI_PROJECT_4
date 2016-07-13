@@ -1,4 +1,4 @@
-angular.module('dragDrop')
+angular.module('buildBikes')
        .controller('PartsController', PartsController)
        .filter('to_trusted', ['$sce', function($sce){
               return function(text) {
@@ -7,7 +7,7 @@ angular.module('dragDrop')
           }]);
 
  PartsController.$inject = ['$http'];
- function PartsController($http){
+ function PartsController($http, CurrentUser){
    var self = this;
    self.all = [];
    self.addPart = addPart;
@@ -15,6 +15,9 @@ angular.module('dragDrop')
    self.getParts = getParts;
    self.deletePart = deletePart;
    self.selectPart = selectPart;
+   var newPart = new Image();
+   self.newPart;
+
 
    getParts();
    function getParts(){
@@ -37,9 +40,13 @@ angular.module('dragDrop')
 
      } else {
 
+      newPart.id = "pic"
+      newPart.src = document.getElementById('pwCanvasMain').toDataURL();
+
        $http
          .post('http://localhost:3000/parts', self.newPart)
          .then(function(response){
+          console.log("new part");
            getParts();
        });
 

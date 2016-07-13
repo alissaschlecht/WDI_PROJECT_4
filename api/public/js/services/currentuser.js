@@ -1,4 +1,4 @@
-angular.module('dragDrop')
+angular.module('buildBikes')
   .factory('CurrentUser' , function(){
 
     return {

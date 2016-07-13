@@ -1,4 +1,4 @@
-angular.module('dragDrop')
+angular.module('buildBikes')
        .controller('BikesController', BikesController);
 
 BikesController.$inject = ['$http'];
