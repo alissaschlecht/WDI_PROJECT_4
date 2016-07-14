@@ -1,22 +1,22 @@
-<h2>BUILD</h2>
-<h1>THE HISTORY OF BIKES</h1>
-
-<div class="container" ng-controller="AnimateController">
-
-
-<div class="buildBike" type="button"><a ui-sref="bikes">Build a bike</a></div>
-
-<div ng-controller="AnimateController as animate">
-
-
-
-   <input class="watchHistory" type="button" value="Watch History" ng-click="startScroll()">
-   <img ng-hide="first" class="firstHistory" id="backgroundImage1" src="../historyline1.svg">
-   <img ng-hide="first" class="firstHistory" id="firstLineText" src="../timelineOne.png">
-   <img ng-hide="second" class="secondHistory" id="backgroundImage2" src="../historyline2.svg">
-   <img ng-hide="second" class="secondHistory" id="secondLineText" src="../timelineTwo.png">
-
-
+<div class="nav">
+  <h2>BUILD</h2>
+  <h1>THE HISTORY OF BIKES</h1>
+  <div class="linkHistory" type="button"><a ui-sref="bikes">Build a bike</a></div>
 </div>
 
-<div id="test"></div>
+<div class="containerHome" ng-controller="AnimateController">
+
+  <div ng-controller="AnimateController as animate">
+
+     <input class="watchHistory" type="button" value="Watch History" ng-click="startScroll()">
+     <img class="firstHistory" id="backgroundImage1" style="display: {{first}}" src="../images/historyline1.svg">
+     <img class="firstHistory" id="firstLineText" style="display: {{first}}" src="../images/timelineOne.png">
+
+      <span class="secondHistory">
+        <img id="backgroundImage2" style="display: {{second}}" src="../images/historyline2.svg">
+        <img id="secondLineText" style="display: {{second}}" src="../images/timelineTwo.png">
+      </span>
+
+  </div>
+
+</div>

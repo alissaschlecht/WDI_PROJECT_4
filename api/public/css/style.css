@@ -3,10 +3,31 @@
   font-family: 'Dosis', sans-serif;
 }
 
+.nav {
+  width: 100%;
+  color: grey;
+  display: block;
+  padding-left: 20px;
+  margin-top: -20px;
+  padding-top: 20px;
+  position: fixed;
+  background-color: #2B2D42;
+  opacity: .9;
+  z-index: 99;
+}
+
+.containerHome {
+  padding-top: 150px;
+}
+
+.builtBikes {
+  margin-top: 150px;
+  padding-left: 40px;
+  font-size: 16px;
+}
+
 h1 {
-  font-size: 100px;
-  margin-top: 30px;
-  margin-left: 20px;
+  font-size: 80px;
 }
 
 #theFuture {
@@ -41,15 +62,25 @@ li {
 
 .leftSideBar {
   position: relative;
-  width: 150px;
-  height: 100vh;
-  float: left;
-  margin-left: 20px;
+  width: 95%;
+  height: 100px;
+  margin: 0 auto;
   border-radius: 15px;
-  background-color: #aabbcc;
+  background-color: #EFEFEF;
   text-align: center;
 }
 
+.leftSideBar div {
+  position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*.leftSideBar span {
+  position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}*/
 .rightSideBar {
   font-size: 15px;
   width: 200px;
@@ -61,16 +92,26 @@ li {
   padding: 20px;
 }
 
-#mainContainer {
-  float: left;
-  margin: 0 auto;
-  width: 900px;
+#dots {
+  font-size: 50px;
   text-align: center;
 }
 
-#linkHistory {
+.mainContainer {
+  /*float: left;*/
+  margin-top: 150px;
+  width: 800px;
+}
+
+#colorContainer {
+  width: 100%;
+  margin-top: 10px;
+  margin: 0 auto;
+}
+
+.linkHistory {
   width: 150px;
-  top:10px;
+  top:30px;
   right: 50px;
   position: absolute;
   text-align: center;
@@ -83,13 +124,31 @@ li {
   margin-left: 40%;
 }
 
+.bigNumber {
+  font-size: 40px;
+}
+
+#save {
+  width: 100%;
+  height: 25px;
+  font-size: 20px;
+  border-radius: 5%;
+  background-color: #aabbcc;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#save:hover {
+  background-color: #C5D1D8;
+}
+
 #bikeContainer {
   position: relative;
-  width: 830px;
+  width: 800px;
   height: 440px;
   margin: 0 auto;
   margin-top:20px;
-  background-color: #aabbcc;
+  background-color: #F7F7F7;
   border-radius: 15px;
 }
 
@@ -99,15 +158,26 @@ li {
 }
 
 .top1, .top2, .top3, .top4 {
-  font-size: 25px;
+  font-size: 20px;
+  margin-left: 20px;
 }
 
 .top1 {
   margin-bottom: 10px;
+  margin-top: 150px;
+  text-align: center;
+}
+
+#topDiv {
+  width: 100%;
+  text-align: center;
 }
 
 
 .top2 {
+/*  position: absolute;
+  top:25px;
+  left:-25px;*/
   margin-bottom: 20px;
 }
 #colorWheel {
@@ -200,9 +270,12 @@ a:hover {
 
 #finishedBikeContainer {
   float: right;
-
 }
 
+.secondHistory {
+  display: block;
+  margin-top: -285px;
+}
 /*ANIMATIONS*/
 
 /*SPIN WHEELS*/
@@ -216,29 +289,3 @@ a:hover {
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg);
 
 
-/*FADE OUT LEFT*/
-
-.animate-enter, 
-.animate-leave
-{ 
-    -webkit-transition: 1975ms cubic-bezier(0.680, -0.550, 0.265, 1.550) all;
-    -moz-transition: 1975ms cubic-bezier(0.680, -0.550, 0.265, 1.550) all;
-    -ms-transition: 1975ms cubic-bezier(0.680, -0.550, 0.265, 1.550) all;
-    -o-transition: 1975ms cubic-bezier(0.680, -0.550, 0.265, 1.550) all;
-    transition: 1975ms cubic-bezier(0.680, -0.550, 0.265, 1.550) all;
-} 
- 
-.animate-enter {
-    left: 100%;
-}
-.animate-enter.animate-enter-active {
-    left: 0;
-}
- 
-.animate-leave {
-    left: 0;
-}
-.animate-leave.animate-leave-active{
-    left: -100%;
-}
-  

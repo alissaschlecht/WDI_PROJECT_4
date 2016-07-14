@@ -1,43 +1,35 @@
 angular.module('buildBikes')
        .controller('AnimateController', AnimateController)
+
       
 
-function AnimateController($scope){
+function AnimateController($scope, $timeout){
 
+  $scope.first = 'inline';
+  $scope.second = 'none';
 
-  // $scope.first = false;
-  $scope.second = true;
+  $timeout(function() {
+    var fadeOut = document.getElementById('backgroundImage1');
+    var fadeOut2 = document.getElementById('firstLineText');
 
+    fadeOut.classList.add('animated');
+    fadeOut.classList.add('fadeOutLeftBig');
+    fadeOut2.classList.add('animated');
+    fadeOut2.classList.add('fadeOutLeftBig');
 
-// var bikes = document.getElementById('backgroundImage');
+    $scope.second = 'inline';
+   
+    var fadeIn = document.getElementById('backgroundImage2');
+    var fadeIn2 = document.getElementById('secondLineText');
 
-// bikes.animate({"left":"100%"}, "slow");
+    fadeIn.classList.add('animated');
+    fadeIn.classList.add('fadeInRightBig');
+    fadeIn2.classList.add('animated');
+    fadeIn2.classList.add('fadeInRightBig');
+    
 
-$scope.startScroll = function(){
+  }, 5000);
   
-
-
-  var fadeOut = document.getElementById('backgroundImage1');
-  var fadeOut2 = document.getElementById('firstLineText');
-
-  fadeOut.classList.add('animated');
-  fadeOut.classList.add('fadeOutLeftBig');
-  fadeOut2.classList.add('animated');
-  fadeOut2.classList.add('fadeOutLeftBig');
-
-  var fadeIn = document.getElementById('backgroundImage1');
-  var fadeIn2 = document.getElementById('secondLineText');
-
-  fadeIn.classList.add('animated');
-  fadeIn.classList.add('fadeInRightBig');
-  fadeIn2.classList.add('animated');
-  fadeIn2.classList.add('fadeInRightBig');
-
-  $scope.first = true;
-  $scope.second = false;
-}
-
-
 }
 
 
