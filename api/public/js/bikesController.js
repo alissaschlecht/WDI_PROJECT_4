@@ -6,6 +6,7 @@ BikesController.$inject = ['$http'];
 function BikesController($http){
   
   var self = this;
+  self.spinWheel = spinWheel;
   self.showBikes = showBikes;
   self.saveBike  = saveBike;
   self.getParts  = getParts;
@@ -14,16 +15,6 @@ function BikesController($http){
   self.parts     = [];
   self.bikes  = [];
   showBikes();
-
-  // self.newBike = {
-  //   name: "New Bike2",
-  //   color: "blue",
-  //   rearWheel : {},
-  //   frontWheel: {},
-  //   crank: {},
-  //   seat: {},
-  //   handlebars: {}
-  // };
 
   self.newBike = {};
 
@@ -91,6 +82,21 @@ function BikesController($http){
   function selectBike(bike) {
 
     self.newBike = bike;
+
+  }
+
+  function spinWheel(){
+
+    spinWheels1 = document.getElementsByClassName('frontWheel');
+    spinWheels2 = document.getElementsByClassName('rearWheel');
+    spinWheels1[0].classList.add('spinWheel');
+    spinWheels2[0].classList.add('spinWheel');
+
+    console.log("lalal")
+
+    // var frontWheel = document.getElementById('frontWheel');
+    // var rearWheel = document.getElementById('backWheel');
+
 
   }
 
