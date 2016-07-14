@@ -1,4 +1,5 @@
 * {
+  border: red 1px solid;
   font-family: 'Dosis', sans-serif;
 }
 
@@ -46,8 +47,8 @@ li {
   position: relative;
   width: 830px;
   height: 440px;
-  float: left;
-  margin-left: 0 auto;
+  margin: 0 auto;
+  background-color: beige;
 }
 
 #partsContainer {
@@ -55,72 +56,120 @@ li {
  height: 600px;
 }
 
-#bikeFrameOne {
-  width: 450px;
-  position: absolute;
-  top: 50px;
-  left: 155px;
-  z-index: -1;
- 
-}
-
 #bikeFrameOne:hover {
   fill: blue;
 }
 
-#bikeFrameImg {
+
+/*DROP DIVS*/
+/*.frameBox {
   width: 450px;
+  height: 600px;
   position: absolute;
   top: 50px;
   left: 155px;
-  z-index: -2;
 }
 
-
-/*PRE-DROP DIVS*/
-.backWheel {
+.backWheelBox {
+  position: absolute;
   width: 290px;
   height: 290px;
   top: 149px;
   left: 13px;
 }
 
-.frontWheel {
+.frontWheelBox {
+position: absolute;
  width: 290px;
  height: 290px;
  top: 140px;
  left: 455px;
 }
 
-.seat {
+.seatBox {
+position: absolute;
  width: 120px !important;
  height: 45 !important;
  top: 20px;
  left: 206px
 }
 
-.handlebar {
+.handleBarBox {
+  position: absolute;
   width: 130px;
   height: 108px;
   top: 1px;
   left: 498px;
 }
 
-.gear {
+.gearsBox {
  width: 288px;
  height: 130px;
  top: 255px;
  left: 136px;
  position: absolute;
 }
+*/
 
-#chain {
+
+/*IMAGES*/
+
+.frame {
+  width: 450px;
+  /*height: 600px;*/
+}
+
+.backWheel {
+  /*position: absolute;*/
+  width: 290px;
+  height: 290px;
+/*  top: 149px;
+  left: 13px;*/
+}
+
+.frontWheel {
+/*position: absolute;*/
+ width: 290px;
+ height: 290px;
+/* top: 140px;
+ left: 455px;*/
+}
+
+.seat {
+position: absolute;
+ width: 120px !important;
+ height: 45 !important;
+/* top: 20px;
+ left: 206px*/
+}
+
+.handleBar {
+  /*position: absolute;*/
+  width: 130px;
+  height: 108px;
+/*  top: 1px;
+  left: 498px;*/
+}
+
+.gears {
+ width: 288px;
+ height: 130px;
+/* top: 255px;
+ left: 136px;*/
+ /*position: absolute;*/
+}
+
+
+
+
+
+/*#chain {
   width: 450px;
   position: absolute;
   top: 100px;
   left: 155px;
   z-index: -1;
-}
+}*/
 
 /*#crank1 {
   width: 204px;
@@ -165,9 +214,9 @@ li {
 .over {
   background: #aabbcc;
 }
-.small {
+/*.small {
   width: 100px;
-}
+}*/
 
 svg:hover {
   opacity: .5;

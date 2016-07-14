@@ -1,4 +1,5 @@
 var Bike = require('../models/Bike');
+var User = require('../models/User');
 
 // GET ALL
 function getAllBikes(request, response) {
@@ -34,9 +35,16 @@ function createBike(request, response) {
 
   var bike = new Bike(request.body);
 
+  User.findById({ _id: "578776be4806a9fc3786d7e8" }, function(err, user) {
+    user.bikes.push(bike);
+    user.save(function(err, user) {
+      // response.json({bike: bike});
+    });
+  })
   bike.save(function(error) {
     if(error) response.json({messsage: 'Could not ceate bike b/c:' + error});
     response.json({bike: bike});
+
   });
 }
 

@@ -5,14 +5,16 @@ var express        = require('express'),
 
 var bikesController = require('../controllers/bikes');
 
-  router.route('/bikes')
-        .get(bikesController.getAllBikes)
-        .post(bikesController.createBike);
+router.route('/bikes')
+      .get(bikesController.getAllBikes)
+      .post(bikesController.createBike);
 
   router.route('/bikes/:id')
-        .get(bikesController.getBike)
-        .put(bikesController.updateBike)
-        .delete(bikesController.removeBike)
+      .get(bikesController.getBike)
+      .put(bikesController.updateBike)
+      .delete(bikesController.removeBike)
+
+
 
 
 var partsController = require('../controllers/parts');
