@@ -3,13 +3,13 @@
   <input type="text" ng-model="controller.newBike.name">
 
 
-  <div class="btn btn-primary" 
+  <div class="btn" 
        data-drag="true" 
        data-jqyoui-options="{revert: 'invalid'}" 
        ng-model="part" 
        jqyoui-draggable="{animate:true}" 
        ng-hide="!part.name" 
-       ng-repeat="part in controller.parts">{{part.name}}</div>
+       ng-repeat="part in controller.parts" ng-bind-html="part.svg | to_trusted"></div>
 
   <input type="button" value="show data" ng-click="controller.dropped()">
 
