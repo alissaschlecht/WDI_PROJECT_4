@@ -3,7 +3,14 @@ var User = require('../models/User');
 
 // GET ALL
 function getAllBikes(request, response) {
-  Bike.find(function(error, bikes) {
+  Bike.find({})
+  .populate('frontWheel')
+  .populate('rearWheel')
+  .populate('crank')
+  .populate('seat')
+  .populate('handlebars')
+  .populate('frame')
+  .exec(function(error, bikes) {
     if(error) response.status(404).send(error);
 
     response.status(200).send(bikes);
@@ -35,17 +42,41 @@ function createBike(request, response) {
 
   var bike = new Bike(request.body);
 
-  User.findById({ _id: "578776be4806a9fc3786d7e8" }, function(err, user) {
-    user.bikes.push(bike);
-    user.save(function(err, user) {
-      // response.json({bike: bike});
-    });
-  })
   bike.save(function(error) {
+
+    console.log(bike);
     if(error) response.json({messsage: 'Could not ceate bike b/c:' + error});
-    response.json({bike: bike});
+
+    User.findById({ _id: "57879acd0c2817b43e0be8d8" }, function(err, user) {
+      
+      user.bikes.push(bike);
+
+      user.save(function(err, user) {
+
+        var opts = [
+              { path: 'frontWheel' }
+            , { path: 'rearWheel' }
+            , { path: 'handlebars' }
+            , { path: 'crank' }
+            , { path: 'seat' }
+            , { path: 'frame' }
+          ]
+
+        Bike.populate(bike, opts, function(err, bike) { 
+
+          response.json({bike: bike});
+
+        });
+        
+      });
+    })
+
+    
 
   });
+
+  
+
 }
 
 

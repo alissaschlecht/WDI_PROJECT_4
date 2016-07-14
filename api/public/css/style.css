@@ -1,10 +1,19 @@
 * {
-  border: red 1px solid;
+  /*border: red 1px solid;*/
   font-family: 'Dosis', sans-serif;
 }
 
-#backgroundImage {
-  width: 800px;
+h1 {
+  font-size: 100px;
+  margin-left: 20px;
+}
+
+#theFuture {
+  font-size: 15px;
+}
+
+#backgroundImage1 {
+  width: 100%;
 }
 
 #frontPageContainer {
@@ -29,18 +38,45 @@ li {
   list-style-type: none;
 }
 
-.navbar {
+.leftSideBar {
   position: relative;
+  width: 150px;
+  height: 100vh;
   float: left;
-}
-.navbar-inverse {
+  margin-left: 20px;
+  border-radius: 15px;
   background-color: #aabbcc;
   text-align: center;
 }
 
-.navbar-inverse li {
+.rightSideBar {
+  font-size: 15px;
+  width: 200px;
+  border-radius: 15px;
+  background-color: #aabbcc;
+  text-align: left;
+  float: right;
+  margin-right: 20px;
   padding: 20px;
-  /*height: 100vh;  */
+}
+
+#mainContainer {
+  float: left;
+  margin: 0 auto;
+  width: 900px;
+  text-align: center;
+}
+
+#linkHistory {
+  width: 150px;
+  text-align: center;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+#chooseColor {
+  margin-left: 40%;
 }
 
 #bikeContainer {
@@ -48,7 +84,9 @@ li {
   width: 830px;
   height: 440px;
   margin: 0 auto;
-  background-color: beige;
+  margin-top:20px;
+  background-color: #aabbcc;
+  border-radius: 15px;
 }
 
 #partsContainer {
@@ -56,145 +94,11 @@ li {
  height: 600px;
 }
 
-#bikeFrameOne:hover {
-  fill: blue;
+.top1, .top2, .top3, .top4 {
+  font-size: 25px;
 }
 
-
-/*DROP DIVS*/
-/*.frameBox {
-  width: 450px;
-  height: 600px;
-  position: absolute;
-  top: 50px;
-  left: 155px;
-}
-
-.backWheelBox {
-  position: absolute;
-  width: 290px;
-  height: 290px;
-  top: 149px;
-  left: 13px;
-}
-
-.frontWheelBox {
-position: absolute;
- width: 290px;
- height: 290px;
- top: 140px;
- left: 455px;
-}
-
-.seatBox {
-position: absolute;
- width: 120px !important;
- height: 45 !important;
- top: 20px;
- left: 206px
-}
-
-.handleBarBox {
-  position: absolute;
-  width: 130px;
-  height: 108px;
-  top: 1px;
-  left: 498px;
-}
-
-.gearsBox {
- width: 288px;
- height: 130px;
- top: 255px;
- left: 136px;
- position: absolute;
-}
-*/
-
-
-/*IMAGES*/
-
-.frame {
-  width: 450px;
-  /*height: 600px;*/
-}
-
-.backWheel {
-  /*position: absolute;*/
-  width: 290px;
-  height: 290px;
-/*  top: 149px;
-  left: 13px;*/
-}
-
-.frontWheel {
-/*position: absolute;*/
- width: 290px;
- height: 290px;
-/* top: 140px;
- left: 455px;*/
-}
-
-.seat {
-position: absolute;
- width: 120px !important;
- height: 45 !important;
-/* top: 20px;
- left: 206px*/
-}
-
-.handleBar {
-  /*position: absolute;*/
-  width: 130px;
-  height: 108px;
-/*  top: 1px;
-  left: 498px;*/
-}
-
-.gears {
- width: 288px;
- height: 130px;
-/* top: 255px;
- left: 136px;*/
- /*position: absolute;*/
-}
-
-
-
-
-
-/*#chain {
-  width: 450px;
-  position: absolute;
-  top: 100px;
-  left: 155px;
-  z-index: -1;
-}*/
-
-/*#crank1 {
-  width: 204px;
-  top: 110px;
-  left: 446px;
-  position: absolute;
-}
-
-
-#cog1 {
-  width: 86px;
-  top: 141px;
-  left: 155px;
-  position: absolute;
-  z-index: 2;
-}
-
-#pedal1 {
-  width: 79px;
-  height:93;
-  top: 179px;
-  left: 605px;
-  position: absolute;
-}
-*/
+.top1 {}
 
 
 #colorWheel {
@@ -245,6 +149,49 @@ img#bikeFrameOne:hover {
   margin-top: 20px;
   border-radius: 20px;
   background-color: grey; 
+}
+
+.sidebar-brand a{
+  color: black;
+}
+
+.sidebar-brand:hover {
+  background-color: #aabbcc;
+}
+
+.buildBike {
+  width: 80px;
+  color: color: #aabbbb;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.watchHistory {
+  background-color: white;
+  color: #aabbbb;
+  border: none;
+  border-radius: 5px;
+}
+
+.watchHistory:hover, .buildBike:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+a {
+  color: #aabbbb;
+}
+
+a:hover {
+  text-decoration:none;
+  color: grey;
+}
+
+#finishedBikeContainer {
+  float: right;
+
 }
 
 /*ANIMATIONS*/

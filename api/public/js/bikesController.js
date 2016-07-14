@@ -10,8 +10,9 @@ function BikesController($http){
   self.saveBike  = saveBike;
   self.getParts  = getParts;
   self.dropped   = dropped;
+  self.selectBike = selectBike;
   self.parts     = [];
-  self.allBikes  = [];
+  self.bikes  = [];
   showBikes();
 
   // self.newBike = {
@@ -29,6 +30,10 @@ function BikesController($http){
   function dropped(value) {
     console.log(self.newBike);
   }
+
+  self.beforeDrop = function() {
+     console.log('hello');
+      };
 
   function getParts() {
 
@@ -77,9 +82,15 @@ function BikesController($http){
         .get('http://localhost:3000/bikes/')
         .then(function(response){
 
-          self.allBikes = response.data;
+          self.bikes = response.data;
           console.log(self.allBikes);
       });
+
+  }
+
+  function selectBike(bike) {
+
+    self.newBike = bike;
 
   }
 

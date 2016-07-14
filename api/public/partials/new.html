@@ -1,23 +1,40 @@
 <div ng-controller="BikesController as controller">
 
+<H1>BUILD YOUR BIKE <span id="theFuture"> (OF THE FUTURE)</span></H1>
 
-  <input type="text" ng-model="controller.newBike.name">
+<div id="linkHistory">   
+     <a ui-sref="home">Back to History</a>
+</div>
 
-  <!-- <input type="button" ng-click="controller.showBikes()" value="Show My Bikes"> -->
-<!--   <div type="button" ng-model="controller.allBikes" ng-repeat="bike in controller.allBikes"><img src="../completeBike.svg" style="width: 100px; fill: blue; "></div> -->
+<div class="leftSideBar">
+<h3>CHOOSE PARTS</h3>
 
-  <div class="btn {{ part.name }}" 
-       data-drag="true" 
-       data-jqyoui-options="{revert: 'invalid'}" 
-       ng-model="part" 
-       jqyoui-draggable="{animate:true}" 
-       ng-hide="!part.name" 
-       ng-repeat="part in controller.parts | limitTo : 6" ng-bind-html="part.svg | to_trusted">
-  </div>
+        <div class="btn {{ part.name }}" 
+             data-drag="true" 
+             data-jqyoui-options="{revert: 'invalid'}" 
+             ng-model="part" 
+             jqyoui-draggable="{animate:true}" 
+             ng-hide="!part.name" 
+             ng-repeat="part in controller.parts | limitTo : 6" ng-bind-html="part.svg | to_trusted"
+             style="width: 100px;">
+        </div>
+</div>
+
+
+
+
+<div id="mainContainer">
+  <label class="top1"> <strong>1.</strong> What's Your Bike's Name?</label>
+  <input type="text" ng-model="controller.newBike.name" style="color: {{controller.newBike.color}};">
+  <span class="top2">2. Build Your Bike <i class="fa fa-arrow-down" aria-hidden="true"></i></span>
+
+  <label class="top3"> <strong>3.</strong> Choose Color</label>
+  <input type="color" ng-model="controller.newBike.color">
+  <span class="top4" ng-click="controller.saveBike()">SAVE!</span>
 
   <div id="bikeContainer">
 
-    <div class="frontWheelBox" 
+    <div class="box" 
       data-drop="true" 
       data-jqyoui-options 
       ng-model="controller.newBike.frontWheel" 
@@ -28,7 +45,8 @@
        height: 290px;
        top: 140px;
        left: 455px;
-       fill: blue;">
+       border: white 1px solid;
+       fill: {{controller.newBike.color}};">
 
       <div data-drag="false" 
         data-jqyoui-options 
@@ -40,7 +58,7 @@
 
     </div>
 
-    <div class="backWheelBox" 
+    <div class="box" 
       data-drop="true" 
       data-jqyoui-options 
       ng-model="controller.newBike.rearWheel" 
@@ -50,7 +68,9 @@
       width: 290px;
       height: 290px;
       top: 149px;
-      left: 13px;">
+      left: 13px;
+      border: white 1px solid;
+      fill: {{controller.newBike.color}};">
 
       <div data-drag="false" 
         data-jqyoui-options 
@@ -62,7 +82,7 @@
 
     </div>
 
-    <div class="seatBox" 
+    <div class="box" 
       data-drop="true" 
       data-jqyoui-options 
       ng-model="controller.newBike.seat" 
@@ -72,7 +92,9 @@
        width: 120px;
        height: 45px;
        top: 20px;
-       left: 206px;">
+       left: 206px;
+       border: white 1px solid;
+       fill: {{controller.newBike.color}};">
 
       <div data-drag="false" 
         data-jqyoui-options 
@@ -84,16 +106,19 @@
 
     </div>
 
-    <div class="crankBox" 
+    <div class="box" 
       data-drop="true" 
       data-jqyoui-options 
       ng-model="controller.newBike.crank" 
       jqyoui-droppable 
-      style=' width: 288px;
-              height: 130px;
-              top: 255px;
-              left: 136px;
-              position: absolute;'>
+      style=' 
+      width: 288px;
+      height: 130px;
+      top: 255px;
+      left: 136px;
+      position: absolute;
+      border: white 1px solid;
+      fill: {{controller.newBike.color}};'>
 
         <div data-drag="false" 
           data-jqyoui-options 
@@ -105,7 +130,7 @@
 
     </div>
 
-    <div class="handleBarBox" 
+    <div class="box" 
       data-drop="true" 
       data-jqyoui-options 
       ng-model="controller.newBike.handlebars" 
@@ -114,19 +139,22 @@
           width: 130px;
           height: 108px;
           top: 1px;
-          left: 498px;'>
+          left: 498px;
+          border: white 1px solid;
+          fill: {{controller.newBike.color}};'>
 
         <div 
           data-drag="false" 
           data-jqyoui-options 
           ng-model="controller.newBike.handlebars" 
           jqyoui-draggable 
-          ng-hide="!controller.newBike.handlebars.name"ng-bind-html="controller.newBike.handlebars.svg | to_trusted"> 
+          ng-hide="!controller.newBike.handlebars.name"
+          ng-bind-html="controller.newBike.handlebars.svg | to_trusted"> 
         </div>
 
     </div>
 
-    <div class="frameBox" 
+    <div class="box" 
       data-drop="true" 
       data-jqyoui-options 
       ng-model="controller.newBike.frame" 
@@ -136,7 +164,9 @@
       height: 220px;
       position: absolute;
       top: 50px;
-      left: 155px;">
+      left: 155px;
+      border: white 1px solid;
+      fill: {{controller.newBike.color}};">
 
         <div data-drag="false" 
           data-jqyoui-options 
@@ -151,8 +181,16 @@
 
   </div>
 
-    <input type="button" ng-click="controller.saveBike()" value="Save Bike">
-    <input type="color" ng-model="controller.newBike.color">
+
+
+</div>
+
+<div class="rightSideBar">
+  <h3>BUILT BIKES</h3>
+
+  <div id="completedBikes" ng-repeat="bike in controller.bikes" ng-click="controller.selectBike(bike)" style="color: {{bike.color}}"><img src="../bikeOne/B1frontWheel.svg" style="fill:{{bike.color}}; width: 10px;"> {{bike.name}}</div>
+
+</div>
 
 
 </div>

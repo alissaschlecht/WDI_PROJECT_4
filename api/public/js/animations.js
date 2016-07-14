@@ -1,29 +1,30 @@
 angular.module('buildBikes')
        .controller('AnimateController', AnimateController)
-       .directive('animate', animate)
+      
 
 function AnimateController($scope){
+
+
+  $scope.first = false;
+  $scope.second = true;
+
 
 // var bikes = document.getElementById('backgroundImage');
 
 // bikes.animate({"left":"100%"}, "slow");
 
-$scope.startScroll = function(){
+// $scope.startScroll = function(){
   
-  var fadeOut = document.getElementById('backgroundImage');
 
-  fadeOut.classList.add('animated');
-  fadeOut.classList.add('fadeOutLeftBig');
-  // fadeOut.style.webkitTransitionDuration="10s"
+
+  // var fadeOut = document.getElementById('backgroundImage1');
+
+  // fadeOut.classList.add('animated');
+  // fadeOut.classList.add('fadeOutLeftBig');
   
-}
-
-// startScroll();
-
-}
-
-function animate(){
+// }
 
 
 }
+
 
