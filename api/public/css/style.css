@@ -5,6 +5,7 @@
 
 h1 {
   font-size: 100px;
+  margin-top: 30px;
   margin-left: 20px;
 }
 
@@ -69,6 +70,9 @@ li {
 
 #linkHistory {
   width: 150px;
+  top:10px;
+  right: 50px;
+  position: absolute;
   text-align: center;
   margin-left: 20px;
   margin-bottom: 20px;
@@ -98,9 +102,14 @@ li {
   font-size: 25px;
 }
 
-.top1 {}
+.top1 {
+  margin-bottom: 10px;
+}
 
 
+.top2 {
+  margin-bottom: 20px;
+}
 #colorWheel {
   width: 200px;
 }
