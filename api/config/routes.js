@@ -11,7 +11,7 @@ var bikesController = require('../controllers/bikes');
 
   router.route('/bikes/:id')
         .get(bikesController.getBike)
-        .patch(bikesController.updateBike)
+        .put(bikesController.updateBike)
         .delete(bikesController.removeBike)
 
 

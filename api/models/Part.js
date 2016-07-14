@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var PartSchema = mongoose.Schema({
+  bike_id: { type: mongoose.Schema.ObjectId, ref: 'Bike' },
   name: String,
   svg: String,
   width: Number,

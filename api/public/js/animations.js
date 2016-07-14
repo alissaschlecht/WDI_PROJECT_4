@@ -14,6 +14,7 @@ $scope.startScroll = function(){
 
   fadeOut.classList.add('animated');
   fadeOut.classList.add('fadeOutLeftBig');
+  // fadeOut.style.webkitTransitionDuration="10s"
   
 }
 

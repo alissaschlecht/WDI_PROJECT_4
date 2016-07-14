@@ -13,11 +13,17 @@ function getAllBikes(request, response) {
 function getBike(request, response) {
   var id = request.params.id;
 
-  Bike.findById({_id: id}, function(error, bike) {
+  Bike.findById({_id: id})
+  .populate('frontWheel')
+  .populate('rearWheel')
+  .populate('crank')
+  .populate('seat')
+  .populate('handlebars')
+  .exec(function(error, bike) {
     if(error) response.status(404).send(error);
 
-    response.status(200).send(bike);
-  }).select('-__v');
+    response.status(200).send({bike: bike});
+  });
 }
 
 // POST
@@ -25,13 +31,10 @@ function createBike(request, response) {
   console.log('in POST');
   console.log('body:',request.body);
 
-  var bike = new Bike(request.body.bike);
+  var bike = new Bike(request.body);
 
   bike.save(function(error) {
     if(error) response.json({messsage: 'Could not ceate bike b/c:' + error});
-
-
-
     response.json({bike: bike});
   });
 }
@@ -40,17 +43,18 @@ function createBike(request, response) {
 function updateBike(request, response) {
   var id = request.params.id;
 
-  Bike.findById({_id: id}, function(error, bike) {
-    if(error) response.json({message: 'Could not find bike b/c:' + error});
+  Bike.findByIdAndUpdate(id, request.body, {new: true})
+  .populate('frontWheel')
+  .populate('rearWheel')
+  .populate('crank')
+  .populate('seat')
+  .populate('handlebars')
+  .exec( function(err, bike) {
+    
+    if(err) response.json({message: 'Could not find bike b/c:' + err});
+    response.json({bike: bike});
 
-    if(request.body.name) bike.name = request.body.name;
-
-    bike.save(function(error) {
-      if(error) response.json({messsage: 'Could not update bike b/c:' + error});
-
-      response.json({message: 'Bike successfully updated', bike: bike});
-    });
-  }).select('-__v');
+  });
 }
 
 function removeBike(request, response) {

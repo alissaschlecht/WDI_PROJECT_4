@@ -1,4 +1,5 @@
 var Part = require('../models/Part');
+var Bike = require('../models/Bike');
 
 // GET ALL PARTS
 function getAllParts(request, response) {
@@ -15,7 +16,7 @@ function createPart(request, response) {
   console.log('body:',request.body);
 
   var part = new Part(request.body);
-
+  
   part.save(function(error) {
     if(error) response.json({messsage: 'Could not ceate part b/c:' + error});
 

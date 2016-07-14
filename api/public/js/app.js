@@ -1,4 +1,4 @@
-angular.module('buildBikes', ['ngSanitize', 'ui.router', 'pw.canvas-painter', 'ngAnimate'])
+angular.module('buildBikes', ['ngSanitize', 'ui.router', 'pw.canvas-painter', 'ngAnimate', 'color.picker' , 'ngDragDrop'])
        .config(function($stateProvider, $urlRouterProvider) {
   
   $stateProvider
@@ -17,6 +17,10 @@ angular.module('buildBikes', ['ngSanitize', 'ui.router', 'pw.canvas-painter', 'n
     .state('brakes', {
       url: "/brakes",
       templateUrl: "./partials/brakes.html"
+    })
+    .state('new', {
+      url: "/new",
+      templateUrl: "./partials/new.html"
     })
     $urlRouterProvider.otherwise("/");
 });

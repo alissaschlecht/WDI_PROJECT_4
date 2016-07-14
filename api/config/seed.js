@@ -9,7 +9,19 @@ seeder.connect('mongodb://localhost:27017/bikes', function() {
 });
 
 var data = [
-
+// {
+  // 'model': 'Bike',
+  // 'documents': [
+  //     {
+  //       name: String,
+  //       wheelOne: ,
+  //       wheelTwo: ,
+  //       frame: ,
+  //       handlebars: ,
+  //       seat:
+  //     }
+  //   ]
+  // },
 {
   'model': 'User',
   'documents': [
