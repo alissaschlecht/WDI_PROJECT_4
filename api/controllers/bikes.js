@@ -6,7 +6,7 @@ function getAllBikes(request, response) {
     if(error) response.status(404).send(error);
 
     response.status(200).send(bikes);
-  }).select('-__v');
+  });
 }
 
 //GET ONE
@@ -19,6 +19,7 @@ function getBike(request, response) {
   .populate('crank')
   .populate('seat')
   .populate('handlebars')
+  .populate('frame')
   .exec(function(error, bike) {
     if(error) response.status(404).send(error);
 
@@ -49,6 +50,7 @@ function updateBike(request, response) {
   .populate('crank')
   .populate('seat')
   .populate('handlebars')
+  .populate('frame')
   .exec( function(err, bike) {
     
     if(err) response.json({message: 'Could not find bike b/c:' + err});
@@ -64,7 +66,7 @@ function removeBike(request, response) {
     if(error) response.json({message: 'Could not delete bike b/c:' + error});
 
     response.json({message: 'Bike successfully deleted'});
-  }).select('-__v');
+  });
 }
 
 

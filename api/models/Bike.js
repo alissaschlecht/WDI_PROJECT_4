@@ -7,7 +7,8 @@ var BikeSchema = mongoose.Schema({
   frontWheel: {type: mongoose.Schema.ObjectId, ref: 'Part'},
   crank: {type: mongoose.Schema.ObjectId, ref: 'Part'},
   seat: {type: mongoose.Schema.ObjectId, ref: 'Part'},
-  handlebars: {type: mongoose.Schema.ObjectId, ref: 'Part'}
+  handlebars: {type: mongoose.Schema.ObjectId, ref: 'Part'},
+  frame:  {type: mongoose.Schema.ObjectId, ref: 'Part'}
   // parts: [{type: mongoose.Schema.ObjectId, ref: 'Part'}]
 });
 

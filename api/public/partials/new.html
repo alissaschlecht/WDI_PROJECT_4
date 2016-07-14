@@ -2,42 +2,105 @@
 
   <input type="text" ng-model="controller.newBike.name">
 
-
   <div class="btn" 
        data-drag="true" 
        data-jqyoui-options="{revert: 'invalid'}" 
        ng-model="part" 
        jqyoui-draggable="{animate:true}" 
        ng-hide="!part.name" 
-       ng-repeat="part in controller.parts" ng-bind-html="part.svg | to_trusted"></div>
-
-  <input type="button" value="show data" ng-click="controller.dropped()">
+       ng-repeat="part in controller.parts | limitTo : 5" ng-bind-html="part.svg | to_trusted"></div>
 
   <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="controller.newBike.frontWheel" jqyoui-droppable style='height:50px;'>
 
 
-    <div data-drag="false" data-jqyoui-options ng-model="controller.newBike.frontWheel" jqyoui-draggable ng-hide="!controller.newBike.frontWheel.name" ng-bind-html="controller.newBike.frontWheel.svg | to_trusted"></div>
+    <div data-drag="false" 
+      data-jqyoui-options 
+      ng-model="controller.newBike.frontWheel" 
+      jqyoui-draggable 
+      ng-hide="!controller.newBike.frontWheel.name" 
+      ng-bind-html="controller.newBike.frontWheel.svg | to_trusted"> 
+    </div>
 
   </div>
 
-  <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="controller.newBike.rearWheel" jqyoui-droppable style='height:50px;'>
-    <div data-drag="false" data-jqyoui-options ng-model="controller.newBike.rearWheel" jqyoui-draggable ng-hide="!controller.newBike.rearWheel.name" ng-bind-html="controller.newBike.rearWheel.svg | to_trusted"></div>
+  <div class="thumbnail" 
+    data-drop="true" 
+    data-jqyoui-options 
+    ng-model="controller.newBike.rearWheel" 
+    jqyoui-droppable 
+    style='height:50px;'>
+
+    <div data-drag="false" 
+      data-jqyoui-options 
+      ng-model="controller.newBike.rearWheel" 
+      jqyoui-draggable 
+      ng-hide="!controller.newBike.rearWheel.name" 
+      ng-bind-html="controller.newBike.rearWheel.svg | to_trusted">    
+    </div>
+
   </div>
 
-  <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="controller.newBike.seat" jqyoui-droppable style='height:50px;'>
-    <div data-drag="false" data-jqyoui-options ng-model="controller.newBike.seat" jqyoui-draggable ng-hide="!controller.newBike.seat.name" ng-bind-html="controller.newBike.seat.svg | to_trusted"></div>
+  <div class="thumbnail" 
+    data-drop="true" 
+    data-jqyoui-options 
+    ng-model="controller.newBike.seat" 
+    jqyoui-droppable 
+    style='height:50px;'>
+    <div data-drag="false" 
+      data-jqyoui-options 
+      ng-model="controller.newBike.seat" 
+      jqyoui-draggable 
+      ng-hide="!controller.newBike.seat.name" 
+      ng-bind-html="controller.newBike.seat.svg | to_trusted">    
+    </div>
   </div>
 
-  <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="controller.newBike.crank" jqyoui-droppable style='height:50px;'>
-    <div data-drag="false" data-jqyoui-options ng-model="controller.newBike.crank" jqyoui-draggable ng-hide="!controller.newBike.crank.name" ng-bind-html="controller.newBike.crank.svg | to_trusted"></div>
+  <div class="thumbnail" 
+    data-drop="true" 
+    data-jqyoui-options 
+    ng-model="controller.newBike.crank" 
+    jqyoui-droppable 
+    style='height:50px;'>
+      <div data-drag="false" 
+        data-jqyoui-options 
+        ng-model="controller.newBike.crank" 
+        jqyoui-draggable 
+        ng-hide="!controller.newBike.crank.name" 
+        ng-bind-html="controller.newBike.crank.svg | to_trusted">    
+      </div>
   </div>
 
-  <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="controller.newBike.handlebars" jqyoui-droppable style='height:50px;'>
-    <div data-drag="false" data-jqyoui-options ng-model="controller.newBike.handlebars" jqyoui-draggable ng-hide="!controller.newBike.handlebars.name"ng-bind-html="controller.newBike.handlebars.svg | to_trusted"></div>
+  <div class="thumbnail" 
+    data-drop="true" 
+    data-jqyoui-options 
+    ng-model="controller.newBike.handlebars" 
+    jqyoui-droppable 
+    style='height:50px;'>
+      <div data-drag="false" 
+        data-jqyoui-options 
+        ng-model="controller.newBike.handlebars" 
+        jqyoui-draggable 
+        ng-hide="!controller.newBike.handlebars.name"ng-bind-html="controller.newBike.handlebars.svg | to_trusted"> 
+      </div>
+  </div>
+
+  <div class="thumbnail" 
+    data-drop="true" 
+    data-jqyoui-options 
+    ng-model="controller.newBike.frame" 
+    jqyoui-droppable 
+    style='height:50px;'>
+      <div data-drag="false" 
+        data-jqyoui-options 
+        ng-model="controller.newBike.frame" 
+        jqyoui-draggable 
+        ng-hide="!controller.newBike.frame.name"
+        ng-bind-html="controller.newBike.frame.svg | to_trusted"> 
+      </div>
   </div>
 
   <div  class="dnd-image-drag" id="bikeContainer">
-   <img src="./bikeOne/B1frame.svg" id="bikeFrameImg">
+   <div ng-bind-html="controller.newBike.frame.svg | to_trusted" style="fill: blue;" id="bikeFrameImg">
   </div>
 
   <input type="button" ng-click="controller.saveBike()" value="Save Bike">
