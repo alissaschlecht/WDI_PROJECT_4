@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var app        = express();
 
 var mongoose   = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/bikes');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/bikes');
 
 var routes     = require('./config/routes');
 
