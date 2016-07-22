@@ -29,7 +29,7 @@ function BikesController($http){
   function getParts() {
 
       $http
-        .get('http://localhost:3000/parts')
+        .get('/parts')
         .then(function(response){
 
           self.parts = response.data;
@@ -43,7 +43,7 @@ function BikesController($http){
   function saveBike(){
       if(self.newBike._id) {
           $http
-            .put('http://localhost:3000/bikes/' + self.newBike._id, self.newBike)
+            .put('/bikes/' + self.newBike._id, self.newBike)
             .then(function(response){ 
               self.newBike = response.data.bike;
               console.log(self.newBike);
@@ -51,7 +51,7 @@ function BikesController($http){
 
       } else {
           $http
-            .post('http://localhost:3000/bikes', self.newBike)
+            .post('/bikes', self.newBike)
             .then(function(response){ 
               self.newBike = response.data.bike;
           });
@@ -61,7 +61,7 @@ function BikesController($http){
 
   function getBike(id) {
       $http
-        .get('http://localhost:3000/bikes/' + id)
+        .get('/bikes/' + id)
         .then(function(response){
 
           self.newBike = response.data.bike;
@@ -70,7 +70,7 @@ function BikesController($http){
 
   function showBikes() {
       $http
-        .get('http://localhost:3000/bikes/')
+        .get('/bikes/')
         .then(function(response){
 
           self.bikes = response.data;
