@@ -47,7 +47,7 @@ function createBike(request, response) {
     console.log(bike);
     if(error) response.json({messsage: 'Could not ceate bike b/c:' + error});
 
-    User.findById({ _id: "57879acd0c2817b43e0be8d8" }, function(err, user) {
+    User.findOne({}, function(err, user) {
       
       user.bikes.push(bike);
 
