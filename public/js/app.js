@@ -1,4 +1,5 @@
 angular.module('buildBikes', ['ngSanitize', 'ui.router', 'ngAnimate', 'ngDragDrop'])
+       .constant('API', '/api')
        .config(function($stateProvider, $urlRouterProvider) {
   
   $stateProvider
