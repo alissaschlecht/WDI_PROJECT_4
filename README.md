@@ -25,15 +25,15 @@ This is a my final project for General Assembly's Web Development Immersive Cour
 I spent a questionably healthy amount of time in my childhood tearing apart and re-building bicycles that I uncannily kept winning from the local supermarket raffle. This project is a throwback to that deep love of building and invention. I wanted to create a fun way to replicate that experience online, with an educational bent. I also wanted to use the chance to explore additional front end technologies that we did not cover in the course, and play around with possibilities. 
 ####User Stories:
 
-![Wireframes](public/images/userStory1.png "Wire Frame")
-![Wireframes](public/images/userStory2.png "Wire Frame")
+![Wireframes](http://imgur.com/hvb9bpX "User Stories")
+![Wireframes](http://imgur.com/Yy5hLzE "User Stories")
 
 ######See user stories [here](https://www.pivotaltracker.com/n/projects/1650761 "https://www.pivotaltracker.com/n/projects/1650761")
 
 ####WireFrames: 
 
-![Wireframes](public/images/balsamiq1.png "Wire Frame")
-![Wireframes](public/images/balsamiq2.png "Wire Frame")
+![Wireframes](http://imgur.com/kTHVcj7 "Wire Frame")
+![Wireframes](http://imgur.com/4NH4thj "Wire Frame")
 
 
 ##Final Product
