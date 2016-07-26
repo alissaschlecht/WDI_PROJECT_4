@@ -1,4 +1,3 @@
-# WDI_PROJECT_4
 #Bike Builder
 
 This is a my final project for General Assembly's Web Development Immersive Course. It is a one week project, and comes on the heels of an introduction to Angular.js.
@@ -26,15 +25,15 @@ This is a my final project for General Assembly's Web Development Immersive Cour
 I spent a questionably healthy amount of time in my childhood tearing apart and re-building bicycles that I uncannily kept winning from the local supermarket raffle. This project is a throwback to that deep love of building and invention. I wanted to create a fun way to replicate that experience online, with an educational bent. I also wanted to use the chance to explore additional front end technologies that we did not cover in the course, and play around with possibilities. 
 ####User Stories:
 
-![Wireframes](userStory1.png "Wire Frame")
-![Wireframes](userStory2.png "Wire Frame")
+![Wireframes](public/images/userStory1.png "Wire Frame")
+![Wireframes](public/images/userStory2.png "Wire Frame")
 
 ######See user stories [here](https://www.pivotaltracker.com/n/projects/1650761 "https://www.pivotaltracker.com/n/projects/1650761")
 
 ####WireFrames: 
 
-![Wireframes](balsamiq1.png "Wire Frame")
-![Wireframes](balsamiq2.png "Wire Frame")
+![Wireframes](public/images/balsamiq1.png "Wire Frame")
+![Wireframes](public/images/balsamiq2.png "Wire Frame")
 
 
 ##Final Product
