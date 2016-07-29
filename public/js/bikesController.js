@@ -24,23 +24,21 @@ function BikesController($http){
     console.log(self.newBike);
   }
 
-  self.beforeDrop = function() {
-     console.log('hello');
-      };
+  // self.beforeDrop = function() {
+  //    console.log('hello');
+  //     };
 
   function getParts() {
 
       $http
         .get('/parts')
         .then(function(response){
-
           self.parts = response.data;
       });
 
   }
 
   getParts();
-  // getBike("578762c540daf5b234527825");
 
   function saveBike(){
       if(self.newBike._id) {
@@ -48,8 +46,7 @@ function BikesController($http){
             .put('/bikes/' + self.newBike._id, self.newBike)
             .then(function(response){ 
               self.newBike = response.data.bike;
-              console.log(self.newBike);
-          });
+          }); 
 
       } else {
           $http
@@ -58,7 +55,9 @@ function BikesController($http){
               self.newBike = response.data.bike;
           });
 
-      }  
+      } 
+    showBikes(); 
+    getParts();
   }
 
   function getBike(id) {
@@ -76,7 +75,6 @@ function BikesController($http){
         .then(function(response){
 
           self.bikes = response.data;
-          console.log(self.allBikes);
       });
 
   }
