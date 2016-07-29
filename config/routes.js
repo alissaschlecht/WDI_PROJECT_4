@@ -14,9 +14,6 @@ router.route('/bikes')
       .put(bikesController.updateBike)
       .delete(bikesController.removeBike)
 
-
-
-
 var partsController = require('../controllers/parts');
 
   router.route('/parts')

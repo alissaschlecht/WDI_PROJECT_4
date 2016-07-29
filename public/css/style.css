@@ -173,7 +173,6 @@ li {
   text-align: center;
 }
 
-
 .top2 {
 /*  position: absolute;
   top:25px;
@@ -279,7 +278,7 @@ a:hover {
 /*ANIMATIONS*/
 
 /*SPIN WHEELS*/
-.spinWheel {
+/*.spinWheel {
     -webkit-animation:spin 1.5s linear infinite;
     -moz-animation:spin 1.5s linear infinite;
     animation:spin 1.5s linear infinite;
@@ -288,4 +287,4 @@ a:hover {
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg);
 
-
+*/

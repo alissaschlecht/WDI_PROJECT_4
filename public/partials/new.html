@@ -186,7 +186,15 @@
 
 <div class="col-md-2 builtBikes">
   <h3>BUILT BIKES</h3>
-  <div id="completedBikes" ng-repeat="bike in controller.bikes" ng-click="controller.selectBike(bike)" style="color: {{bike.color}}"><img src="../bikeOne/B1frontWheel.svg" style="fill:{{bike.color}}; width: 20px;"> {{bike.name}}</div>
+  <div 
+    id="completedBikes" 
+    ng-repeat="bike in controller.bikes" 
+    ng-click="controller.selectBike(bike)" 
+    style="color: {{bike.color}}">
+    <img src="../bikeOne/B1frontWheel.svg" style="fill:{{bike.color}}; width: 20px;"> {{bike.name}}
+    <!-- <button class='delete' ng-click="criminals.deleteCriminal(criminal)">X</button> -->
+    <div id="delete" ng-click="controller.deleteBike(bike)">DELETE</div>
+  </div>
 
 </div>
 

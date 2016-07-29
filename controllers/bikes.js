@@ -75,8 +75,6 @@ function createBike(request, response) {
 
   });
 
-  
-
 }
 
 
