@@ -39,7 +39,6 @@ function BikesController($http){
 
   }
 
-  getPartCategory("seat");
   function getPartCategory(category){
    $http
      .get('http://localhost:3000/category/' + category)
