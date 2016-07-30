@@ -8,6 +8,7 @@ function BikesController($http){
   var self = this;
   self.spinWheel = spinWheel;
   self.showBikes = showBikes;
+  self.getPartCategory = getPartCategory;
   self.saveBike  = saveBike;
   self.deleteBike = deleteBike;
   self.getParts  = getParts;
@@ -38,7 +39,14 @@ function BikesController($http){
 
   }
 
-  getParts();
+  getPartCategory("seat");
+  function getPartCategory(category){
+   $http
+     .get('http://localhost:3000/category/' + category)
+     .then(function(response){
+       self.parts = response.data;
+     })
+  }
 
   function saveBike(){
       if(self.newBike._id) {

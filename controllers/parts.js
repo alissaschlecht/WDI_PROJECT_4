@@ -7,7 +7,17 @@ function getAllParts(request, response) {
     if(error) response.status(404).send(error);
 
     response.status(200).send(parts);
-  }).select('-__v');
+  });
+}
+
+function getPartsForCategory(request, response) {
+  var category = request.params.category;
+
+  Part.find({ 'category': category }, function(error, parts) {
+    if(error) response.status(404).send(error);
+
+    response.status(200).send(parts);
+  });
 }
 
 // POST
@@ -42,9 +52,7 @@ function updatePart(request, response) {
     if(error) response.json({message: 'Could not find part b/c:' + error});
 
     if(request.body.name) part.name = request.body.name;
-    // if(request.body.location) criminal.location = request.body.location;
-    // if(request.body.status) criminal.status = request.body.status;
-
+    
     part.save(function(error) {
       if(error) response.json({messsage: 'Could not update part b/c:' + error});
 
@@ -65,6 +73,7 @@ function removePart(request, response) {
 
 module.exports = {
   getAllParts: getAllParts,
+  getPartsForCategory: getPartsForCategory,
   createPart: createPart,
   getPart: getPart,
   updatePart: updatePart,

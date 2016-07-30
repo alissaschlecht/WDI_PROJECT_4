@@ -3,6 +3,10 @@
   font-family: 'Dosis', sans-serif;
 }
 
+.col-sm-2 {
+  border: red 1px solid;
+}
+
 .nav {
   width: 100%;
   color: grey;

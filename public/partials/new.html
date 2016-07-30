@@ -1,13 +1,28 @@
 <div ng-controller="BikesController as controller">
 
-<div class="nav">
+<!-- <div class="nav">
   <H1>BUILD YOUR BIKE <span id="theFuture"> (OF THE FUTURE)</span></H1>
   <span class="linkHistory">   
        <a ui-sref="home">Back to History</a>
   </span>
+</div> -->
+<div class="dropContainer">
+  <div class="col-sm-2" ng-click="controller.getPartCategory('frame')">
+  frame
+  </div>
+  <div class="col-sm-2" ng-click="controller.getPartCategory('seat')">
+  seat
+  </div>
+  <div class="col-sm-2" ng-click="controller.getPartCategory('handleBar')">
+  handlebars
+  </div>
+  <div class="col-sm-2" ng-click="controller.getPartCategory('gears')">
+  gears
+  </div>
+  <div class="col-sm-2" ng-click="controller.getPartCategory('wheel')">
+  wheel
+  </div>
 </div>
-<!-- <input type="button" ng-click="spinWheel()" value="Spin Wheels!"> -->
-
 <div class="col-md-3">
   <label class="top1"> <span class="bigNumber">1.</span>NAME YOUR BIKE </label><i class="fa fa-arrow-right" aria-hidden="true"></i>
   <input type="text" placeholder="e.g. SuperBike" ng-model="controller.newBike.name" style="color: {{controller.newBike.color}};">

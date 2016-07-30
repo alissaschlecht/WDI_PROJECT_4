@@ -20,28 +20,17 @@ var partsController = require('../controllers/parts');
         .get(partsController.getAllParts)
         .post(partsController.createPart);
 
+  router.route('/category/:category')
+        .get(partsController.getPartsForCategory);
+
   router.route('/parts/:id')
         .get(partsController.getPart)
         .patch(partsController.updatePart)
         .delete(partsController.removePart);
 
-
 var authenticationController = require("../controllers/authentication");
 
 router.route('/users')
       .get(authenticationController.getUsers);
-
-
-// var infoController = require('../controllers/info');
-
-//   router.route('/parts')
-//         .get(infoController.getAllInfo)
-//         .post(infoController.createInfo);
-
-//   router.route('/info/:id')
-//         .get(infoController.getInfo)
-//         .patch(infoController.updateInfo)
-//         .delete(infoController.removeInfo)
-
 
 module.exports = router

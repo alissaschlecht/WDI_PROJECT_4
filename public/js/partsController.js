@@ -10,65 +10,74 @@ angular.module('buildBikes')
  function PartsController($http, CurrentUser){
    var self = this;
    self.all = [];
-   self.addPart = addPart;
-   self.newPart = {};
-   self.getParts = getParts;
-   self.deletePart = deletePart;
-   self.selectPart = selectPart;
-   var newPart = new Image();
-   self.newPart;
+   self.getPartCategory = getPartCategory;
+   // self.addPart = addPart;
+   // self.newPart = {};
+   // self.getParts = getParts;
+   // self.deletePart = deletePart;
+   // self.selectPart = selectPart;
+   // var newPart = new Image();
+   // self.newPart;
 
 
-   getParts();
-   function getParts(){
-     $http
-       .get('http://localhost:3000/parts')
-       .then(function(response){
-         self.all = response.data;
-     });
+   // getParts();
+   // function getParts(){
+   //   $http
+   //     .get('http://localhost:3000/parts')
+   //     .then(function(response){
+   //       self.all = response.data;
+   //   });
+   // }
+
+   getPartCategory("seat");
+   function getPartCategory(category){
+    $http
+      .get('http://localhost:3000/category/' + category)
+      .then(function(response){
+        self.all = response.data;
+      })
    }
 
-   function addPart(){
+   // function addPart(){
 
-     if(self.newPart._id) {
+   //   if(self.newPart._id) {
 
-       $http
-         .patch('http://localhost:3000/parts/' + self.newPart._id, self.newPart)
-         .then(function(response){
-           getParts();
-       });
+   //     $http
+   //       .patch('http://localhost:3000/parts/' + self.newPart._id, self.newPart)
+   //       .then(function(response){
+   //         // getParts();
+   //     });
 
-     } else {
+   //   } else {
 
-      newPart.id = "pic"
-      newPart.src = document.getElementById('pwCanvasMain').toDataURL();
+   //    newPart.id = "pic"
+   //    newPart.src = document.getElementById('pwCanvasMain').toDataURL();
 
-       $http
-         .post('http://localhost:3000/parts', self.newPart)
-         .then(function(response){
-          console.log("new part");
-           getParts();
-       });
+   //     $http
+   //       .post('http://localhost:3000/parts', self.newPart)
+   //       .then(function(response){
+   //         // getParts();
+   //     });
 
-     }
+   //   }
    
-     self.newPart = {};
-   }
+   //   self.newPart = {};
+   // }
 
-   function deletePart(part){
-     $http
-       .delete("http://localhost:3000/parts/" + part._id)
-       .then(function(response){
-         var index = self.all.indexOf(part);
-         self.all.splice(index, 1);
-       });
-   }
+   // function deletePart(part){
+   //   $http
+   //     .delete("http://localhost:3000/parts/" + part._id)
+   //     .then(function(response){
+   //       var index = self.all.indexOf(part);
+   //       self.all.splice(index, 1);
+   //     });
+   // }
 
-   function selectPart(part) {
+   // function selectPart(part) {
 
-     self.newPart = part;
+   //   self.newPart = part;
 
-   }
+   // }
 
  }
 
