@@ -7,20 +7,20 @@
   </span>
 </div> -->
 <div class="dropContainer">
-  <div class="col-sm-2" ng-click="controller.getPartCategory('frame')">
-  frame
+  <div class="col-md-2 col-sm-6" ng-click="controller.getPartCategory('frame')">
+    <img class="selectPart" src="../frame2.svg">
   </div>
-  <div class="col-sm-2" ng-click="controller.getPartCategory('seat')">
-  seat
+  <div class="col-md-2 col-sm-6" ng-click="controller.getPartCategory('seat')">
+    <img class="selectPart" src="../seat1.svg">
   </div>
-  <div class="col-sm-2" ng-click="controller.getPartCategory('handleBar')">
-  handlebars
+  <div class="col-md-2 col-sm-6" ng-click="controller.getPartCategory('handleBar')">
+    <img class="selectPart" src="../handlebar1.svg">
   </div>
-  <div class="col-sm-2" ng-click="controller.getPartCategory('gears')">
-  gears
+  <div class="col-md-2 col-sm-6" ng-click="controller.getPartCategory('gears')">
+    <img class="selectPart" src="../gears2.svg">
   </div>
-  <div class="col-sm-2" ng-click="controller.getPartCategory('wheel')">
-  wheel
+  <div class="col-md-2 col-sm-6" ng-click="controller.getPartCategory('wheel')">
+    <img class="selectPart" src="../wheel2.svg">
   </div>
 </div>
 <div class="col-md-3">
@@ -31,13 +31,14 @@
 
           <div class="btn {{ part.name }}" 
                data-drag="true" 
-               data-jqyoui-options="{revert: 'invalid'}" 
+               data-jqyoui-options="{revert: 'invalid', helper: 'clone'}"
                ng-model="part" 
-               jqyoui-draggable="{animate:true}" 
+               jqyoui-draggable="{index: {{$index}}, animate: true, placeholder: 'keep'}" 
                ng-hide="!part.name" 
-               ng-repeat="part in controller.parts | limitTo : 6" ng-bind-html="part.svg | to_trusted"
+               ng-repeat="part in controller.parts" ng-bind-html="part.svg | to_trusted"
                style="width: 100px;">
           </div>
+
 <br/>
 <br/>
   <label class="top3"> <span class="bigNumber">3.</span>COLOR YOUR BIKE</label><i class="fa fa-arrow-right"aria-hidden="true"></i>

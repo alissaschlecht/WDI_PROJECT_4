@@ -5,6 +5,11 @@
 
 .col-sm-2 {
   border: red 1px solid;
+  height: 160px;
+}
+
+.selectPart {
+  width: 100px;
 }
 
 .nav {
@@ -80,11 +85,6 @@ li {
     transform: translateY(-50%);
 }
 
-/*.leftSideBar span {
-  position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}*/
 .rightSideBar {
   font-size: 15px;
   width: 200px;

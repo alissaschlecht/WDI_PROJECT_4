@@ -64,7 +64,7 @@ function BikesController($http){
 
       } 
     showBikes(); 
-    getParts();
+    // getParts();
   }
 
   function getBike(id) {
