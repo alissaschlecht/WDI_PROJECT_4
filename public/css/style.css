@@ -1,6 +1,19 @@
 * {
-  /*border: red 1px solid;*/
   font-family: 'Dosis', sans-serif;
+}
+
+.block{
+  width: 100%;
+  height: 200px;
+}
+
+.nav-pills {
+  position: relative !important;
+  display: block;
+}
+
+.partSelectContainer{
+  margin-bottom: 90px;
 }
 
 .col-sm-2 {
@@ -9,7 +22,11 @@
 }
 
 .selectPart {
-  width: 100px;
+  width: 70px;
+}
+
+.selectPart:hover{
+  opacity: .5;
 }
 
 .nav {
@@ -20,7 +37,7 @@
   margin-top: -20px;
   padding-top: 20px;
   position: fixed;
-  background-color: #2B2D42;
+  /*background-color: #2B2D42;*/
   opacity: .9;
   z-index: 99;
 }
@@ -36,7 +53,7 @@
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 40px;
 }
 
 #theFuture {
@@ -96,14 +113,7 @@ li {
   padding: 20px;
 }
 
-#dots {
-  font-size: 50px;
-  text-align: center;
-}
-
 .mainContainer {
-  /*float: left;*/
-  margin-top: 150px;
   width: 800px;
 }
 
@@ -126,10 +136,6 @@ li {
 
 #chooseColor {
   margin-left: 40%;
-}
-
-.bigNumber {
-  font-size: 40px;
 }
 
 #save {
@@ -156,53 +162,15 @@ li {
   border-radius: 15px;
 }
 
-#partsContainer {
+.partsContainer {
  width: 300px;
- height: 600px;
-}
-
-.top1, .top2, .top3, .top4 {
-  font-size: 20px;
-  margin-left: 20px;
-}
-
-.top1 {
-  margin-bottom: 10px;
-  margin-top: 150px;
-  text-align: center;
+ height: 300px;
 }
 
 #topDiv {
   width: 100%;
   text-align: center;
 }
-
-.top2 {
-/*  position: absolute;
-  top:25px;
-  left:-25px;*/
-  margin-bottom: 20px;
-}
-#colorWheel {
-  width: 200px;
-}
-
-/*STYLES FOR JS ANIMATION*/
-.bin {
-  position: absolute;
-}
-.item {
-  display: inline;
-}
-.drag {
-  opacity: 0.5;
-}
-.over {
-  background: #aabbcc;
-}
-/*.small {
-  width: 100px;
-}*/
 
 svg:hover {
   opacity: .5;
@@ -211,26 +179,6 @@ svg:hover {
 
 img#bikeFrameOne:hover { 
   fill: red; 
-}
-
-#sidebar-wrapper {
-  width: 200px;
-  height: 100%;
-}
-
-
-.pwCanvasPaint {
-  width: 450px;
-  margin: 0 auto;
-  border: 3px black solid;
-}
-
-#saveImage {
-  position: relative;
-  margin-left: 500px;
-  margin-top: 20px;
-  border-radius: 20px;
-  background-color: grey; 
 }
 
 .sidebar-brand a{

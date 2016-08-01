@@ -6,28 +6,23 @@ BikesController.$inject = ['$http'];
 function BikesController($http){
   
   var self = this;
-  self.spinWheel = spinWheel;
-  self.showBikes = showBikes;
+  self.spinWheel       = spinWheel;
+  self.showBikes       = showBikes;
   self.getPartCategory = getPartCategory;
-  self.saveBike  = saveBike;
-  self.deleteBike = deleteBike;
-  self.getParts  = getParts;
-  self.dropped   = dropped;
-  self.selectBike = selectBike;
-  self.parts     = [];
-  self.bikes  = [];
+  self.saveBike        = saveBike;
+  self.deleteBike      = deleteBike;
+  self.getParts        = getParts;
+  self.selectBike      = selectBike;
+  self.newBike         = newBike;
+  self.parts           = [];
+  self.bikes           = [];
+  self.displayedBike   = {};
+  self.clearBike       = clearBike;
   showBikes();
 
-  self.newBike = {};
-
-
-  function dropped(value) {
-    console.log(self.newBike);
+  function newBike() {
+    self.clearBike();
   }
-
-  // self.beforeDrop = function() {
-  //    console.log('hello');
-  //     };
 
   function getParts() {
 
@@ -48,18 +43,18 @@ function BikesController($http){
   }
 
   function saveBike(){
-      if(self.newBike._id) {
+      if(self.displayedBike._id) {
           $http
-            .put('/bikes/' + self.newBike._id, self.newBike)
+            .put('/bikes/' + self.displayedBike._id, self.displayedBike)
             .then(function(response){ 
-              self.newBike = response.data.bike;
+              self.displayedBike = response.data.bike;
           }); 
 
       } else {
           $http
-            .post('/bikes', self.newBike)
+            .post('/bikes', self.displayedBike)
             .then(function(response){ 
-              self.newBike = response.data.bike;
+              self.displayedBike = response.data.bike;
           });
 
       } 
@@ -72,7 +67,7 @@ function BikesController($http){
         .get('/bikes/' + id)
         .then(function(response){
 
-          self.newBike = response.data.bike;
+          self.displayedBike = response.data.bike;
       });
   }
 
@@ -88,7 +83,7 @@ function BikesController($http){
 
   function selectBike(bike) {
 
-    self.newBike = bike;
+    self.displayedBike = bike;
 
   }
 
@@ -98,7 +93,12 @@ function BikesController($http){
       .then(function(response){
         var index = self.bikes.indexOf(bike);
         self.bikes.splice(index, 1);
+        self.clearBike();
       });
+  }
+
+  function clearBike(){
+    self.displayedBike = {};
   }
 
   function spinWheel(){
