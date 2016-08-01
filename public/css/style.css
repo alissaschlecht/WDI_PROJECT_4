@@ -12,14 +12,17 @@
 /*.navbar-default:*/
 
 .choiceContainer{
-  background-color: #272c33;
+  /*background-color: #272c33;*/
+  background-color: #6f7784;
   height: 100vh;
-  position: fixed;
 }
 
 .choices{
   height: 100vh;
   background-color: #3f4652;
+/*  padding-right: 0px;
+  padding-left: 20px;
+  margin-left: -20px;*/
 }
 
 .navChoices{
@@ -27,10 +30,35 @@
   background-color: #3f4652;
   border: none;
   height:15%;
+  color: #aabbbb;
+  outline: none;
 }
 
 .navChoices:hover{
   background-color: white;
+}
+
+.navChoiceSelected {
+  background-color: #6f7784;
+}
+
+.newText {
+  color: white;
+}
+
+.chooseName, .chooseColor {
+  color: white;
+  font-size: 25px;
+}
+
+.chooseNameDiv, .chooseColorDiv {
+  text-align: center;
+}
+
+.completedBikes{
+  display: block;
+  font-size: 25px;
+  opacity: .8;
 }
 
 .block{
@@ -119,7 +147,7 @@ li {
 
 .mainContainer {
   width: 800px;
-  float: right;
+  float: left;
 }
 
 #colorContainer {
@@ -143,16 +171,8 @@ li {
   margin-left: 40%;
 }
 
-#save {
-/*  font-size: 20px;
-  border-radius: 5%;*/
-  background-color: #aabbcc;
-  text-align: center;
-  margin: 0 auto;
-}
-
 #save:hover {
-  background-color: #C5D1D8;
+  background-color: #00c4cc;
 }
 
 #bikeContainer {
@@ -161,7 +181,7 @@ li {
   height: 440px;
   margin: 0 auto;
   margin-top:20px;
-  /*background-color: grey;*/
+  float: left;
   border-radius: 15px;
 
 }

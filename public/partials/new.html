@@ -18,62 +18,119 @@
   <div class="choiceContainer col-md-4">
 
     <div class="choices col-md-3">
-      <button class="navChoices" id="new" ng-click="controller.newBike()"><i class="fa fa-star" aria-hidden="true"></i> NEW</button>
-      <br/>
-      <button class="navChoices" ng-click="completedBikes = !completedBikes"><a href=""><i class="fa fa-bicycle" aria-hidden="true"></i> BIKES</a></button>
-      <button class="navChoices" ng-click="parts = !parts"><i class="fa fa-wrench" aria-hidden="true"></i>
-   BUILD</button>
 
-      <button class="navChoices" ng-click="changeName = !changeName"><i class="fa fa-pencil" aria-hidden="true"></i> NAME</button>
-      <button class="navChoices" ng-click="changeColor = !changeColor"><i class="fa fa-cog" aria-hidden="true"></i> COLOR</button>
+      <button 
+        class="navChoices" 
+        ng-class="{ navChoiceSelected: controller.newTab }"
+        ng-click="controller.newBike()"
+      >
+        <i class="fa fa-star" aria-hidden="true"></i> 
+        NEW
+      </button>
+      <button 
+        class="navChoices"
+        ng-class="{ navChoiceSelected: controller.completedBikesTab }"  
+        ng-click="controller.showTab('completedBikesTab')"
+      >
+        <i class="fa fa-bicycle" aria-hidden="true"></i> 
+        BIKES
+      </button>
+      <button 
+        class="navChoices" 
+        ng-class="{ navChoiceSelected: controller.partsTab }"
+        ng-click="controller.showTab('partsTab')"
+      >
+        <i class="fa fa-wrench" aria-hidden="true"></i>
+        BUILD
+      </button>
 
-      <button class="navChoices" id="save" ng-click="controller.saveBike()"><i class="fa fa-check" aria-hidden="true"></i> SAVE</button>
+      <button 
+        class="navChoices" 
+        ng-class="{ navChoiceSelected: controller.nameTab }"
+        ng-click="controller.showTab('nameTab')"
+      >
+        <i class="fa fa-pencil" aria-hidden="true"></i> 
+        NAME
+      </button>
+      <button 
+        class="navChoices" 
+        ng-class="{ navChoiceSelected: controller.colorTab }"
+        ng-click="controller.showTab('colorTab')"
+      >
+        <i class="fa fa-cog" aria-hidden="true"></i> 
+        COLOR
+      </button>
+      <button 
+        class="navChoices" 
+        id="save" 
+        ng-click="controller.saveBike()"
+      >
+        <i class="fa fa-check" aria-hidden="true"></i> 
+        SAVE
+      </button>
     </div>
-    <div class="secondChoice">
+    <div class="secondChoice col-md-8">
 
-      <ul ng-show="parts" class="nav nav-pills">
-        <li role="presentation"  ng-click="controller.getPartCategory('frame')"><a href="">Frames</a></li>
-        <li role="presentation" ng-click="controller.getPartCategory('seat')"><a href="">Seats</a></li>
-        <li role="presentation" ng-click="controller.getPartCategory('handleBar')"><a href="">Handlebars</a></li>
-        <li role="presentation" ng-click="controller.getPartCategory('wheel')"><a href="">Wheels</a></li>
-        <li role="presentation" ng-click="controller.getPartCategory('gears')"><a href="">Gears</a></li>
+      <ul ng-show="controller.partsTab" class="nav nav-pills">
+        <li role="presentation"  ng-click="controller.getPartCategory('frame')">
+          <a href="">Frames</a>
+        </li>
+        <li role="presentation" ng-click="controller.getPartCategory('seat')">
+          <a href="">Seats</a>
+        </li>
+        <li role="presentation" ng-click="controller.getPartCategory('handleBar')">
+          <a href="">Handlebars</a>
+        </li>
+        <li role="presentation" ng-click="controller.getPartCategory('wheel')">
+          <a href="">Wheels</a>
+        </li>
+        <li role="presentation" ng-click="controller.getPartCategory('gears')">
+          <a href="">Gears</a>
+        </li>
       </ul>
 
-<!--       <ul ng-show="parts" class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-        <li role="presentation"><a href="#">Messages</a></li>
-      </ul> -->
-
-      <span
-        ng-show="completedBikes"
-        id="completedBikes" 
+      <div
+        ng-show="controller.completedBikesTab"
+        class="completedBikes" 
         ng-repeat="bike in controller.bikes" 
         ng-click="controller.selectBike(bike)" 
-        style="color: {{bike.color}}">
-        <img src="../bikeOne/B1frontWheel.svg" style="fill:{{bike.color}}; width: 20px;"> {{ bike.name }}
-        <span id="delete" ng-click="controller.deleteBike(bike)"> X </span>
-      </span>
+        >
+        <i class="fa fa-bicycle" style="color: {{bike.color}}" aria-hidden="true"></i> 
+        {{ bike.name }}
+        <button id="delete" ng-click="controller.deleteBike(bike)"> x </button>
+      </div>
 
-        <div class="partsContainer">
+        <div class="partsContainer" ng-show="controller.partsTab">
           <div class="btn {{ part.name }}" 
                data-drag="true" 
                data-jqyoui-options="{revert: 'invalid', helper: 'clone'}"
                ng-model="part" 
-               jqyoui-draggable="{index: {{$index}}, animate: true, placeholder: 'keep'}" 
-               ng-hide="!part.name" 
+               jqyoui-draggable="{index: {{$index}}, animate: true, placeholder: 'keep'}"  
                ng-repeat="part in controller.parts" ng-bind-html="part.svg | to_trusted"
                style="width: 100px;">
           </div>
         </div>
 
-      <div ng-show="changeName">
+      <div class="chooseNameDiv" ng-show="controller.nameTab">
+        <div class="chooseName">
+          Give it a name:
+        </div>
         <input type="text" placeholder="e.g. SuperBike" ng-model="controller.displayedBike.name" style="color: {{controller.displayedBike.color}};">
       </div>
      
-      <div ng-show="changeColor">
-        <div>Choose Color</div>
+      <div class="chooseColorDiv" ng-show="controller.colorTab">
+        <div class="chooseColor">Choose a Color: </div>
         <input type="color" ng-model="controller.displayedBike.color">
+      </div>
+
+      <div class="newText" ng-show="controller.newTab">
+        <p>Your new bike is ready to be created!</p> 
+        <p>Select the tabs below to get started, or select bikes to edit a completed bike.</p> 
+        <p>You can give your new bike a name and a color, and don't forget to save!</p>
+      </div>
+
+      <div class="saveText" ng-show="controller.saveTab">
+        <p>Saved!</p>
       </div>
 
   </div>
@@ -81,7 +138,7 @@
 </div>
 
 <!-- =========== BIKE CONTAINER ==================== -->
-  <div class="col-md-7 mainContainer">
+  <div class="col-md-8 mainContainer">
     <div id="bikeContainer">
 
       <div class="box" 

@@ -18,10 +18,40 @@ function BikesController($http){
   self.bikes           = [];
   self.displayedBike   = {};
   self.clearBike       = clearBike;
+  self.showTab         = showTab;
+  self.completedBikesTab = false;
+  self.partsTab        = false;
+  self.nameTab         = false;
+  self.colorTab        = false;
+  self.newTab          = false;
+  self.saveTab         = false;
   showBikes();
+
+  function showTab(tabText) {
+    self.completedBikesTab = false;
+    self.partsTab = false;
+    self.nameTab = false;
+    self.colorTab = false;
+    self.newTab = false;
+
+    if (tabText === 'completedBikesTab') {
+      self.completedBikesTab = true;
+    }else if (tabText === 'partsTab') {
+      self.partsTab = true;
+    }else if(tabText === 'colorTab') {
+      self.colorTab = true;
+    }else if(tabText === 'nameTab') {
+      self.nameTab = true;
+    }else if(tabText === 'newTab') {
+      self.newTab = true;
+    }else if(tabText === 'saveTab') {
+      self.saveTab = true;
+    }
+  }
 
   function newBike() {
     self.clearBike();
+    self.showTab("newTab");
   }
 
   function getParts() {
@@ -59,7 +89,7 @@ function BikesController($http){
 
       } 
     showBikes(); 
-    // getParts();
+    self.showTab("saveTab");
   }
 
   function getBike(id) {
