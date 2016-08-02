@@ -7,8 +7,35 @@
   height: 100vh;
   background-image: url('../images/title.png');
   background-size: cover;
-  opacity: .8;
+  /*opacity: .8;*/
 }
+
+.goContainer {
+  height: 100px;
+  width: 250px;
+  float: right;
+  margin: 100px;
+}
+
+#gInGo, #oInGo {
+  height: 80px;
+  /*opacity: .8;*/
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+#oInGo {
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         2.5s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+    }
 
 .navbar-brand {
   font-size: 25px;
