@@ -69,68 +69,96 @@
         SAVE
       </button>
     </div>
-    <div class="secondChoice col-md-8">
+    <div class="secondChoice col-md-9">
 
-      <ul ng-show="controller.partsTab" class="nav nav-pills">
-        <li role="presentation"  ng-click="controller.getPartCategory('frame')">
-          <a href="">Frames</a>
-        </li>
-        <li role="presentation" ng-click="controller.getPartCategory('seat')">
-          <a href="">Seats</a>
-        </li>
-        <li role="presentation" ng-click="controller.getPartCategory('handleBar')">
-          <a href="">Handlebars</a>
-        </li>
-        <li role="presentation" ng-click="controller.getPartCategory('wheel')">
-          <a href="">Wheels</a>
-        </li>
-        <li role="presentation" ng-click="controller.getPartCategory('gears')">
-          <a href="">Gears</a>
-        </li>
-      </ul>
-
-      <div
-        ng-show="controller.completedBikesTab"
-        class="completedBikes" 
-        ng-repeat="bike in controller.bikes" 
-        ng-click="controller.selectBike(bike)" 
+      <div ng-show="controller.partsTab" class="nav nav-pills">
+        <h2>Build</h2>
+        <p>Choose your parts</p>
+        <button 
+          role="presentation" 
+          ng-class="{ partSelected: controller.frame }" 
+          ng-click="controller.getPartCategory('frame')"
         >
-        <i class="fa fa-bicycle" style="color: {{bike.color}}" aria-hidden="true"></i> 
-        {{ bike.name }}
-        <button id="delete" ng-click="controller.deleteBike(bike)"> x </button>
+          <a href="">Frames</a>
+        </button>
+        <button role="presentation" ng-click="controller.getPartCategory('seat')">
+          <a href="">Seats</a>
+        </button>
+        <button role="presentation" ng-click="controller.getPartCategory('handleBar')">
+          <a href="">Handlebars</a>
+        </button>
+        <button role="presentation" ng-click="controller.getPartCategory('wheel')">
+          <a href="">Wheels</a>
+        </button>
+        <button role="presentation" ng-click="controller.getPartCategory('gears')">
+          <a href="">Gears</a>
+        </button>
       </div>
 
-        <div class="partsContainer" ng-show="controller.partsTab">
-          <div class="btn {{ part.name }}" 
-               data-drag="true" 
-               data-jqyoui-options="{revert: 'invalid', helper: 'clone'}"
-               ng-model="part" 
-               jqyoui-draggable="{index: {{$index}}, animate: true, placeholder: 'keep'}"  
-               ng-repeat="part in controller.parts" ng-bind-html="part.svg | to_trusted"
-               style="width: 100px;">
-          </div>
+      <span class="savedBikes" ng-show="controller.completedBikesTab">
+        <h2> Saved Bikes</h2>
+        <p> Select a bike below to edit it. When you are finished, remember to save! </p>
+
+        <div
+          class="completedBikes" 
+          ng-repeat="bike in controller.bikes" 
+          ng-click="controller.selectBike(bike)" 
+          >
+          <button class="bikeName">
+            <i class="fa fa-bicycle" style="color: {{bike.color}}" aria-hidden="true"></i> 
+            {{ bike.name }}
+          </button>
+          <button class="deleteBike" ng-click="controller.deleteBike(bike)"> x </button>
+          <br/>
         </div>
+      </span>
+
+      <div class="partsContainer" ng-show="controller.partsTab">
+        <div class="btn {{ part.name }}" 
+             data-drag="true" 
+             data-jqyoui-options="{revert: 'invalid', helper: 'clone'}"
+             ng-model="part" 
+             jqyoui-draggable="{index: {{$index}}, animate: true, placeholder: 'keep'}"  
+             ng-repeat="part in controller.parts" ng-bind-html="part.svg | to_trusted"
+             style="width: 100px; fill: #E8ECEC;">
+        </div>
+      </div>
 
       <div class="chooseNameDiv" ng-show="controller.nameTab">
         <div class="chooseName">
-          Give it a name:
+          Choose a name:
         </div>
         <input type="text" placeholder="e.g. SuperBike" ng-model="controller.displayedBike.name" style="color: {{controller.displayedBike.color}};">
       </div>
      
       <div class="chooseColorDiv" ng-show="controller.colorTab">
-        <div class="chooseColor">Choose a Color: </div>
+        <div class="chooseColor">Choose a color: </div>
+        <p>Click the square to change</p>
         <input type="color" ng-model="controller.displayedBike.color">
       </div>
 
       <div class="newText" ng-show="controller.newTab">
-        <p>Your new bike is ready to be created!</p> 
-        <p>Select the tabs below to get started, or select bikes to edit a completed bike.</p> 
-        <p>You can give your new bike a name and a color, and don't forget to save!</p>
+        <h2>Your new bike is ready to be created!</h2> 
+        <p> 
+          <i class="fa fa-star" aria-hidden="true"></i> 
+          Select the tabs to get started or to edit a completed bike.
+        </p> 
+        <img class="arrow" src="../arrow.svg">
+        <p>
+          <i class="fa fa-star" aria-hidden="true"></i> 
+          You can give your new bike a name and a color. 
+        </p> 
+        <p class="paragraphThree">
+          <strong>
+          <i class="fa fa-star" aria-hidden="true"></i> 
+          Don't forget to save!
+          </strong>
+        </p>
       </div>
 
       <div class="saveText" ng-show="controller.saveTab">
-        <p>Saved!</p>
+        <h2>Saved!</h2>
+        <p>See your finished bike in the 'bikes' tab, or select 'New' to start again!</p>
       </div>
 
   </div>
@@ -140,7 +168,7 @@
 <!-- =========== BIKE CONTAINER ==================== -->
   <div class="col-md-8 mainContainer">
     <div id="bikeContainer">
-
+    
       <div class="box" 
         data-drop="true" 
         data-jqyoui-options 

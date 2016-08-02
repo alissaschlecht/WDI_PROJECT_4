@@ -33,6 +33,7 @@ function BikesController($http){
     self.nameTab = false;
     self.colorTab = false;
     self.newTab = false;
+    self.saveTab = false;
 
     if (tabText === 'completedBikesTab') {
       self.completedBikesTab = true;

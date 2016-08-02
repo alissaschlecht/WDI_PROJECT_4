@@ -2,6 +2,54 @@
   font-family: 'Dosis', sans-serif;
 }
 
+.navbar-brand {
+  font-size: 25px;
+  font-family: 'Dosis', sans-serif;
+  color: white !important;
+}
+
+.navbar-brand:hover, .navbar-text:hover{
+  color: #aabbbb !important;
+}
+
+.navbar-text {
+  color: white;
+  margin-right: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.mainContainer {
+  width: 800px;
+  margin: 0 auto;
+  margin-left: 5%;
+}
+
+a {
+  color: #F0F3F3;
+}
+
+a:hover {
+  text-decoration:none;
+  color: grey;
+}
+
+#bikeContainer {
+  position: relative;
+  width: 800px;
+  height: 440px;
+  margin: 0 auto;
+  margin-top:10%;
+  /*margin-left: 12%;*/
+  border-radius: 15px;
+}
+
+svg:hover {
+  opacity: .5;
+}
+
 .navbar {
   margin-bottom: 0px;
   background-color: #00c4cc;
@@ -9,20 +57,36 @@
   border-color: #00c4cc;
 }
 
-/*.navbar-default:*/
 
 .choiceContainer{
-  /*background-color: #272c33;*/
   background-color: #6f7784;
   height: 100vh;
+}
+
+.arrow{
+  height: 144px;
+  margin-bottom: 41px;
+  margin-left: 20px;
+}
+
+.newText p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.savedBikes h2, .savedBikes p{
+  color: #E3E8E8;
+}
+
+button.bikeName {
+  background-color: #3f4652;
+  border: none;
+  color: #E3E8E8;
 }
 
 .choices{
   height: 100vh;
   background-color: #3f4652;
-/*  padding-right: 0px;
-  padding-left: 20px;
-  margin-left: -20px;*/
 }
 
 .navChoices{
@@ -42,84 +106,97 @@
   background-color: #6f7784;
 }
 
+.partSelected {
+  background-color: red;
+}
+
 .newText {
   color: white;
 }
 
-.chooseName, .chooseColor {
-  color: white;
-  font-size: 25px;
+.chooseName, .chooseColor, .saveText h2  {
+  color: #F0F3F3;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
-.chooseNameDiv, .chooseColorDiv {
+.saveText p{
+  font-size: 20px;
+}
+
+.chooseNameDiv, .chooseColorDiv{
+  margin-top: 20px;
   text-align: center;
+  color: #F0F3F3;
 }
 
-.completedBikes{
-  display: block;
-  font-size: 25px;
-  opacity: .8;
-}
-
-.block{
-  width: 100%;
+.chooseColorDiv input {
+  margin-top: 30px;
+  width: 100px;
   height: 100px;
 }
 
-.nav-pills {
-  position: relative !important;
-  display: block;
+.secondChoice {
+  text-align: center;
 }
 
-.partSelectContainer{
-  margin-bottom: 90px;
+.secondChoice h2, .secondChoice p {
+  color: #F0F3F3;
 }
 
-.col-sm-2 {
-  border: red 1px solid;
-  height: 160px;
+.secondChoice button{
+ background-color: #3f4652;
+ color: #E3E8E8;
+ border: 0px;
+ width: 100px;
+ margin-top: 10px;
 }
 
-.selectPart {
-  width: 70px;
+.secondChoice button:hover{
+  background-color: white;
 }
 
-.selectPart:hover{
-  opacity: .5;
+.secondChoice button  a {
+  text-decoration: none;
+  color: #F0F3F3;
 }
 
-.nav {
+.completedBikes{
   width: 100%;
-  color: grey;
   display: block;
-  padding-left: 20px;
-  margin-top: -20px;
-  padding-top: 20px;
-  position: fixed;
-  /*background-color: #2B2D42;*/
-  opacity: .9;
-  z-index: 99;
-}
-
-.containerHome {
-  padding-top: 150px;
-}
-
-.builtBikes {
-  margin-top: 150px;
-  padding-left: 40px;
-  font-size: 16px;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-#theFuture {
+  font-size: 25px;
+  opacity: .8;
+  margin-bottom: 10px;
   font-size: 15px;
 }
 
-#backgroundImage1 {
+.bikeName {
+  display: inline-block;
+  width: 80% !important;
+}
+
+.deleteBike {
+  display: inline-block;
+  width: 10% !important;
+  border: none;
+  background-color: #3f4652;
+  color: #F0F3F3;
+}
+
+.bikeName:hover, .deleteBike:hover{
+  opacity: .5;
+}
+
+.partsContainer {
+  margin-top: 30px;
+}
+
+#save:hover {
+  background-color: #00c4cc;
+}
+
+/*#backgroundImage1 {
   width: 100%;
 }
 
@@ -134,29 +211,14 @@ h1 {
   z-index: 1;
   width: 250px;
   left: 155px;
-  /*top: 10px;*/
   fill: grey;
   -webkit-animation:spin 5s linear infinite;
   -moz-animation:spin 5s linear infinite;
   animation:spin 5s linear infinite;
-}
+}*/
 
-li {
-  list-style-type: none;
-}
 
-.mainContainer {
-  width: 800px;
-  float: left;
-}
-
-#colorContainer {
-  width: 100%;
-  margin-top: 10px;
-  margin: 0 auto;
-}
-
-.linkHistory {
+/*.linkHistory {
   width: 150px;
   top:30px;
   right: 50px;
@@ -165,56 +227,24 @@ li {
   margin-left: 20px;
   margin-bottom: 20px;
   font-size: 20px;
-}
-
-#chooseColor {
-  margin-left: 40%;
-}
-
-#save:hover {
-  background-color: #00c4cc;
-}
-
-#bikeContainer {
-  position: relative;
-  width: 800px;
-  height: 440px;
-  margin: 0 auto;
-  margin-top:20px;
-  float: left;
-  border-radius: 15px;
-
-}
-
-/*.partsContainer {
- width: 300px;
- height: 200px;
 }*/
 
-.secondOptions{
- width: 300px;
- height: 200px;
-}
-
-svg:hover {
-  opacity: .5;
-}
-
+/*
 img#bikeFrameOne:hover { 
   fill: red; 
-}
+}*/
 
-.sidebar-brand a{
+/*.sidebar-brand a{
   color: black;
-}
+}*/
 
-.sidebar-brand:hover {
+/*.sidebar-brand:hover {
   background-color: #aabbcc;
-}
+}*/
 
-.buildBike {
+/*.buildBike {
   width: 80px;
-  color: color: #aabbbb;
+  color: color: #F0F3F3;
   background-color: white;
   border: none;
   border-radius: 5px;
@@ -223,7 +253,7 @@ img#bikeFrameOne:hover {
 
 .watchHistory {
   background-color: white;
-  color: #aabbbb;
+  color: #F0F3F3;
   border: none;
   border-radius: 5px;
 }
@@ -231,21 +261,12 @@ img#bikeFrameOne:hover {
 .watchHistory:hover, .buildBike:hover {
   text-decoration: none;
   color: grey;
-}
+}*/
 
-a {
-  color: #aabbbb;
-}
-
-a:hover {
-  text-decoration:none;
-  color: grey;
-}
-
-.secondHistory {
+/*.secondHistory {
   display: block;
   margin-top: -285px;
-}
+}*/
 /*ANIMATIONS*/
 
 /*SPIN WHEELS*/
