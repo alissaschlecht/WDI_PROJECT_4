@@ -67,7 +67,7 @@ function BikesController($http){
 
   function getPartCategory(category){
    $http
-     .get('http://localhost:3000/category/' + category)
+     .get('/category/' + category)
      .then(function(response){
        self.parts = response.data;
      })
