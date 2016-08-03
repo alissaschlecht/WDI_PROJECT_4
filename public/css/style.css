@@ -38,9 +38,13 @@
     }
 
 .navbar-brand {
-  font-size: 25px;
-  font-family: 'Dosis', sans-serif;
-  color: white !important;
+  margin-top: 0px;
+  color: white;
+}
+
+.logo {
+  margin-top: -15px;
+  height: 50px;
 }
 
 .navbar-brand:hover, .navbar-text:hover{
@@ -90,6 +94,7 @@ svg:hover {
   background-color: #00c4cc;
   border-radius: 0px;
   border-color: #00c4cc;
+  opacity: .8;
 }
 
 

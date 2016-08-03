@@ -115,6 +115,7 @@ function BikesController($http){
   function selectBike(bike) {
 
     self.displayedBike = bike;
+    console.log("working");
 
   }
 
