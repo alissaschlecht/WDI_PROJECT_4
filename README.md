@@ -2,6 +2,9 @@
 
 This is a my final project for General Assembly's Web Development Immersive Course. It is a one week project, and comes on the heels of an introduction to Angular.js.
 
+![Home](./public/images/homeScreenShot.png?raw=true "User Stories")
+![User Stories](./public/images/builtScreenShot.png?raw=true "User Stories")
+
 ######See the currently deployed version at: [www.bikebuilder.heroku.com](www.bikebuilder.heroku.com  "www.bikebuilder.heroku.com")
 
 
