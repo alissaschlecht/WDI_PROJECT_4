@@ -17,7 +17,7 @@
   margin: 100px;
 }
 
-#gInGo, #oInGo {
+#gInGo, .oInGo {
   height: 80px;
   /*opacity: .8;*/
 }
@@ -30,12 +30,57 @@
     -webkit-transform: rotate(360deg);
   }
 }
-#oInGo {
+.oInGo {
     -webkit-animation-name:             rotate; 
     -webkit-animation-duration:         2.5s; 
     -webkit-animation-iteration-count:  infinite;
     -webkit-animation-timing-function: linear;
-    }
+}
+
+#instructions {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 999;
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+#instructionText {
+  color: white;
+  font-size: 17px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#instructionText h2{
+  font-size: 40px;
+}
+
+#clickToStart{
+  background-color: white;
+  color: black;
+  opacity: .3;
+  border: none;
+  margin-top: 20px;
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+#clickToStart:hover{
+  opacity: 1;
+}
+
+.instructionsWheel{
+  width: 80px;
+  fill: white;
+  opacity: .8;
+}
 
 .navbar-brand {
   margin-top: 0px;

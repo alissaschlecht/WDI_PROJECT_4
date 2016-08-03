@@ -1,5 +1,26 @@
 <div ng-controller="BikesController as controller">
 
+<!-- ==================INSTRUCTION SCREEN============= -->
+
+<div ng-hide="showInstructions" id="instructions">
+  <div ng-click="showInstructions=true" id="instructionText">
+    <h2>Welcome to Bike Builder!</h2>
+    <p>There are about 1 billion bicycles that exist in the world today.</p>
+    <p>It seems like a good reason to make some more, right?</p> <p>Here's your chance!</p>
+    <img class="instructionsWheel" src="../images/wheel4.svg">
+    <p>Once you are in the building scene, click on 'BUILD', choose a category of parts, <br/> and drag each part to where you want it to go.</p>
+    <p>Color it, name it and save it.</p>
+    <p>and Voila!</p>
+    <p>A new Bicycle is Built.<p>
+    <p>Good luck!</p>
+    <p>Have fun!</p>
+    <p>Be Safe!</p>
+    <p>Okay, let me get started</p>
+    <p>...</p>
+    <button id="clickToStart">Start</button>
+  </div>  
+</div>
+
 <!-- ================== TOP NAVBAR ====================== -->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -180,7 +201,7 @@
          height: 290px;
          top: 140px;
          left: 455px;
-         border: #c0c7d6 1px solid;
+         border: #f2f2f9 1px solid;
          fill: {{controller.displayedBike.color}};">
 
         <div data-drag="false" 
@@ -204,7 +225,7 @@
         height: 290px;
         top: 149px;
         left: 13px;
-        border: #c0c7d6 1px solid;
+        border: #f2f2f9 1px solid;
         fill: {{controller.displayedBike.color}};">
 
         <div data-drag="false" 
@@ -228,7 +249,7 @@
          height: 45px;
          top: 20px;
          left: 206px;
-         border: #c0c7d6 1px solid;
+         border: #f2f2f9 1px solid;
          fill: {{controller.displayedBike.color}};">
 
         <div data-drag="false" 
@@ -252,7 +273,7 @@
         top: 255px;
         left: 136px;
         position: absolute;
-        border: #edf0f71px solid;
+        border: #f2f2f9 1px solid;
         fill: {{controller.displayedBike.color}};'>
 
           <div data-drag="false" 
@@ -275,7 +296,7 @@
             height: 108px;
             top: 1px;
             left: 498px;
-            border: #c0c7d6 1px solid;
+            border: #f2f2f9 1px solid;
             fill: {{controller.displayedBike.color}};'>
 
           <div 
@@ -300,7 +321,7 @@
         position: absolute;
         top: 50px;
         left: 155px;
-        border: #c0c7d6 1px solid;
+        border: #f2f2f9 1px solid;
         fill: {{controller.displayedBike.color}};">
 
           <div data-drag="false" 
